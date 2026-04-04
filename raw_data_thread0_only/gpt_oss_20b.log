@@ -1,0 +1,6 @@
+build: 62 (f56d77b) with cc (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0 for x86_64-linux-gnu
+gguf_init_from_file_impl: tensor 'blk.0.ffn_down_exps.weight' has invalid ggml type 39 (NONE)
+gguf_init_from_file_impl: failed to read tensor info
+main: error: unable to load model
+llama_model_load: error loading model: llama_model_loader: failed to load model from /home/haibin/model/gpt-oss-20b-F16.gguf
+llama_model_load_from_file_impl: failed to load model
