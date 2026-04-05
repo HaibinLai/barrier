@@ -4,8 +4,9 @@ plot_1v4_numa.py — Compare 1NUMA vs 4NUMA per-operator time breakdown.
 Reads per-batch log files from raw_data/ (1NUMA) and raw_data_4numa/ (4NUMA).
 
 Generates:
-  1. Per-graph-call time comparison (TG phase): stacked Compute + Barrier
-  2. Speedup / Slowdown chart
+  1. Per-graph-call time comparison (PP+TG combined): stacked Compute + Barrier
+  2. Breakdown % comparison
+  3. Compute & Barrier absolute comparison
 """
 
 import os
@@ -31,7 +32,7 @@ BASE_DIR = os.path.dirname(__file__) or "."
 
 
 def parse_tg_perf(filepath):
-    """Parse a per-batch log file. Return average per-graph-call stats for TG phase (last 32 perf lines)."""
+    """Parse a per-batch log file. Return average per-graph-call stats for ALL ops (PP+TG combined, skip warmup)."""
     perf_lines = []
     jsonl_data = None
 
@@ -51,20 +52,30 @@ def parse_tg_perf(filepath):
                 except json.JSONDecodeError:
                     pass
 
-    # TG phase = last 32 perf lines (tg=32 graph calls)
-    tg_perf = perf_lines[-32:] if len(perf_lines) >= 32 else perf_lines
+    # Skip warmup (first 1 perf line), use ALL remaining (PP + TG combined)
+    all_perf = perf_lines[1:] if len(perf_lines) > 1 else perf_lines
 
-    n = len(tg_perf)
+    n = len(all_perf)
     if n == 0:
         return None
 
     avg = {}
     for key in ["graph_us", "avg_compute_us", "avg_barrier_us", "avg_idle_us",
                 "max_compute_us", "min_compute_us"]:
-        avg[key] = sum(p.get(key, 0) for p in tg_perf) / n
+        avg[key] = sum(p.get(key, 0) for p in all_perf) / n
+
+    # Also store total wall time (sum of all graph_us)
+    avg["total_graph_us"] = sum(p.get("graph_us", 0) for p in all_perf)
+    avg["total_compute_us"] = sum(p.get("avg_compute_us", 0) for p in all_perf)
+    avg["total_barrier_us"] = sum(p.get("avg_barrier_us", 0) for p in all_perf)
+    avg["n_graph_calls"] = n
 
     if jsonl_data:
         avg["speed_tg"] = jsonl_data.get("speed_tg", 0)
+        avg["speed_pp"] = jsonl_data.get("speed_pp", 0)
+        avg["t_tg"] = jsonl_data.get("t_tg", 0)
+        avg["t_pp"] = jsonl_data.get("t_pp", 0)
+        avg["t"] = jsonl_data.get("t", 0)
         avg["t_tg"] = jsonl_data.get("t_tg", 0)
 
     return avg
@@ -87,7 +98,7 @@ def load_all(data_dir):
 
 def plot_per_op_time(data_1n, data_4n, output_path):
     """
-    Chart 1: Per-graph-call time (ms), TG phase.
+    Chart 1: Per-graph-call time (ms), PP+TG combined.
     Two bars per batch: left=1NUMA, right=4NUMA. Stacked: Compute + Barrier.
     """
     n_models = len(MODEL_ORDER)
@@ -132,7 +143,7 @@ def plot_per_op_time(data_1n, data_4n, output_path):
 
         ax.set_xticks(x)
         ax.set_xticklabels(BATCH_SIZES)
-        ax.set_ylabel("Time per graph call (ms) — TG phase")
+        ax.set_ylabel("Time per graph call (ms)")
         ax.set_xlabel("Batch size")
         ax.grid(axis="y", linestyle="--", alpha=0.3)
         ax.set_axisbelow(True)
@@ -142,7 +153,7 @@ def plot_per_op_time(data_1n, data_4n, output_path):
             ax.legend(fontsize=8, loc="upper left")
 
     fig.suptitle(
-        "Per-Operator Time: 1NUMA (24t) vs 4NUMA (96t) — TG Phase\n"
+        "Per-Operator Time: 1NUMA (24t) vs 4NUMA (96t) — PP64+TG64\n"
         "Stacked: Compute + Barrier · Intel Xeon 8160",
         fontsize=13, fontweight="bold", y=1.02
     )
@@ -226,7 +237,7 @@ def plot_breakdown_compare(data_1n, data_4n, output_path):
             ax.legend(handles=legend_elements, fontsize=7, loc="lower right", ncol=2)
 
     fig.suptitle(
-        "Barrier% Comparison: 1NUMA (solid) vs 4NUMA (faded) — TG Phase\n"
+        "Barrier% Comparison: 1NUMA (solid) vs 4NUMA (faded) — PP64+TG64\n"
         "Intel Xeon 8160 · PP64 TG32",
         fontsize=13, fontweight="bold", y=1.02
     )
@@ -299,7 +310,7 @@ def plot_compute_and_barrier_abs(data_1n, data_4n, output_path):
             ax.legend(fontsize=9)
 
     fig.suptitle(
-        "1NUMA (24t) vs 4NUMA (96t): Per-Operator Compute & Barrier — TG Phase\n"
+        "1NUMA (24t) vs 4NUMA (96t): Per-Operator Compute & Barrier — PP64+TG64\n"
         "Red ratio = 4NUMA is SLOWER despite 4x cores · Intel Xeon 8160",
         fontsize=13, fontweight="bold", y=1.01
     )
@@ -308,9 +319,61 @@ def plot_compute_and_barrier_abs(data_1n, data_4n, output_path):
     print(f"Saved: {output_path}")
 
 
+def plot_e2e_walltime(data_1n, data_4n, output_path):
+    """
+    Chart 4: Total wall time (sum of all graph_us) for the full PP64+TG64 run.
+    Shows whether 4NUMA is actually faster or slower end-to-end.
+    """
+    n_models = len(MODEL_ORDER)
+    fig, axes = plt.subplots(1, n_models, figsize=(6 * n_models, 5.5), squeeze=False)
+
+    for col, model in enumerate(MODEL_ORDER):
+        d1 = data_1n[model]
+        d4 = data_4n[model]
+        n = len(BATCH_SIZES)
+        x = np.arange(n)
+        width = 0.35
+
+        # Total wall time in seconds
+        t1 = np.array([d.get("total_graph_us", 0) / 1e6 if d else 0 for d in d1])
+        t4 = np.array([d.get("total_graph_us", 0) / 1e6 if d else 0 for d in d4])
+
+        ax = axes[0][col]
+        ax.bar(x - width/2, t1, width, color="#4285F4", alpha=0.9, label="1NUMA (24t)")
+        ax.bar(x + width/2, t4, width, color="#EA4335", alpha=0.7, label="4NUMA (96t)")
+
+        for i in range(n):
+            if t1[i] > 0:
+                ratio = t4[i] / t1[i]
+                color = "#D32F2F" if ratio > 1 else "#388E3C"
+                label = f"{ratio:.1f}x" if ratio > 1 else f"{ratio:.2f}x"
+                ax.text(x[i], max(t1[i], t4[i]) * 1.02,
+                        label, ha="center", va="bottom",
+                        fontsize=8, fontweight="bold", color=color)
+
+        ax.set_xticks(x)
+        ax.set_xticklabels(BATCH_SIZES)
+        ax.set_ylabel("Total wall time (seconds)")
+        ax.set_xlabel("Batch size")
+        ax.grid(axis="y", linestyle="--", alpha=0.3)
+        ax.set_axisbelow(True)
+        ax.set_title(MODEL_DISPLAY.get(model, model), fontsize=12, fontweight="bold")
+        if col == 0:
+            ax.legend(fontsize=9)
+
+    fig.suptitle(
+        "End-to-End Wall Time: 1NUMA (24t) vs 4NUMA (96t) — PP64+TG64\n"
+        "Red = 4NUMA slower · Intel Xeon 8160",
+        fontsize=13, fontweight="bold", y=1.02
+    )
+    fig.tight_layout()
+    fig.savefig(output_path, dpi=180, bbox_inches="tight")
+    print(f"Saved: {output_path}")
+
+
 def main():
-    dir_1n = os.path.join(BASE_DIR, "raw_data")
-    dir_4n = os.path.join(BASE_DIR, "raw_data_4numa")
+    dir_1n = os.path.join(BASE_DIR, "raw_data_pp64tg64")
+    dir_4n = os.path.join(BASE_DIR, "raw_data_pp64tg64_4numa")
 
     data_1n = load_all(dir_1n)
     data_4n = load_all(dir_4n)
@@ -326,6 +389,10 @@ def main():
     # Chart 3: Compute + Barrier absolute split
     plot_compute_and_barrier_abs(data_1n, data_4n,
                                  os.path.join(BASE_DIR, "compare_1v4_compute_barrier.png"))
+
+    # Chart 4: E2E wall time
+    plot_e2e_walltime(data_1n, data_4n,
+                      os.path.join(BASE_DIR, "compare_1v4_e2e.png"))
 
 
 if __name__ == "__main__":
