@@ -520,23 +520,40 @@ def main():
                         help="Directory containing raw benchmark logs")
     parser.add_argument("--output", default=os.path.join(os.path.dirname(__file__) or ".", "bench_breakdown.png"),
                         help="Output image path")
+    parser.add_argument("--per-batch", action="store_true",
+                        help="Use per-batch log files (model_pl{N}.log) instead of combined (model.log)")
     args = parser.parse_args()
 
     model_order = ["qwen3_06b", "qwen3_4b", "llama3_8b"]
+    batch_sizes = [1, 2, 4, 8, 16, 32]
     all_data = {}
 
     for name in model_order:
-        logfile = os.path.join(args.data_dir, f"{name}.log")
-        if not os.path.exists(logfile):
-            print(f"Warning: {logfile} not found, skipping")
-            continue
-
-        perf_lines, jsonl_lines = parse_log(logfile)
-        print(f"{name}: {len(perf_lines)} GGML_PERF_ALL lines, {len(jsonl_lines)} JSONL lines")
-
-        results = aggregate_perf(perf_lines, jsonl_lines)
-        if results:
-            all_data[name] = results
+        if args.per_batch:
+            # Load from individual per-batch log files
+            results = []
+            for pl in batch_sizes:
+                logfile = os.path.join(args.data_dir, f"{name}_pl{pl}.log")
+                if not os.path.exists(logfile):
+                    print(f"Warning: {logfile} not found, skipping")
+                    continue
+                perf_lines, jsonl_lines = parse_log(logfile)
+                print(f"{name} pl={pl}: {len(perf_lines)} GGML_PERF_ALL lines, {len(jsonl_lines)} JSONL lines")
+                r = aggregate_perf(perf_lines, jsonl_lines)
+                results.extend(r)
+            if results:
+                all_data[name] = results
+        else:
+            # Load from combined log file
+            logfile = os.path.join(args.data_dir, f"{name}.log")
+            if not os.path.exists(logfile):
+                print(f"Warning: {logfile} not found, skipping")
+                continue
+            perf_lines, jsonl_lines = parse_log(logfile)
+            print(f"{name}: {len(perf_lines)} GGML_PERF_ALL lines, {len(jsonl_lines)} JSONL lines")
+            results = aggregate_perf(perf_lines, jsonl_lines)
+            if results:
+                all_data[name] = results
 
     if not all_data:
         print("No data found. Run benchmarks first!")
