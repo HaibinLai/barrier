@@ -127,9 +127,9 @@ def plot_per_op_time(data_1n, data_4n, output_path):
 
         # 4NUMA bars (right)
         ax.bar(x + width/2, c4, width, color=c_compute, alpha=0.45, edgecolor=c_compute,
-               linewidth=1, label="Compute (4N)")
+               linewidth=1, label="Compute (8N)")
         ax.bar(x + width/2, b4, width, bottom=c4, color=c_barrier, alpha=0.45, edgecolor=c_barrier,
-               linewidth=1, label="Barrier (4N)")
+               linewidth=1, label="Barrier (8N)")
 
         # Ratio labels on top
         for i in range(n):
@@ -153,7 +153,7 @@ def plot_per_op_time(data_1n, data_4n, output_path):
             ax.legend(fontsize=8, loc="upper left")
 
     fig.suptitle(
-        "Per-Operator Time: 1NUMA (24t) vs 4NUMA (96t) — PP64+TG64\n"
+        "Per-Operator Time: 1NUMA (24t) vs 8NUMA (192t) — PP64+TG64\n"
         "Stacked: Compute + Barrier · Intel Xeon 8160",
         fontsize=13, fontweight="bold", y=1.02
     )
@@ -231,8 +231,8 @@ def plot_breakdown_compare(data_1n, data_4n, output_path):
             legend_elements = [
                 Patch(facecolor=c_compute, alpha=0.9, label="Compute (1N)"),
                 Patch(facecolor=c_barrier, alpha=0.9, label="Barrier (1N)"),
-                Patch(facecolor=c_compute, alpha=0.45, label="Compute (4N)"),
-                Patch(facecolor=c_barrier, alpha=0.45, label="Barrier (4N)"),
+                Patch(facecolor=c_compute, alpha=0.45, label="Compute (8N)"),
+                Patch(facecolor=c_barrier, alpha=0.45, label="Barrier (8N)"),
             ]
             ax.legend(handles=legend_elements, fontsize=7, loc="lower right", ncol=2)
 
@@ -270,7 +270,7 @@ def plot_compute_and_barrier_abs(data_1n, data_4n, output_path):
         ax = axes[0][col]
         bars1 = ax.bar(x - width/2, c1, width, color="#4285F4", alpha=0.9, label="1NUMA (24t)")
         bars4 = ax.bar(x + width/2, c4, width, color="#4285F4", alpha=0.45, edgecolor="#4285F4",
-                       linewidth=1, label="4NUMA (96t)")
+                       linewidth=1, label="8NUMA (192t)")
         for i in range(n):
             if c1[i] > 0:
                 ratio = c4[i] / c1[i]
@@ -291,7 +291,7 @@ def plot_compute_and_barrier_abs(data_1n, data_4n, output_path):
         ax = axes[1][col]
         ax.bar(x - width/2, b1, width, color="#EA4335", alpha=0.9, label="1NUMA (24t)")
         ax.bar(x + width/2, b4, width, color="#EA4335", alpha=0.45, edgecolor="#EA4335",
-               linewidth=1, label="4NUMA (96t)")
+               linewidth=1, label="8NUMA (192t)")
         for i in range(n):
             if b1[i] > 0:
                 ratio = b4[i] / b1[i]
@@ -310,8 +310,8 @@ def plot_compute_and_barrier_abs(data_1n, data_4n, output_path):
             ax.legend(fontsize=9)
 
     fig.suptitle(
-        "1NUMA (24t) vs 4NUMA (96t): Per-Operator Compute & Barrier — PP64+TG64\n"
-        "Red ratio = 4NUMA is SLOWER despite 4x cores · Intel Xeon 8160",
+        "1NUMA (24t) vs 8NUMA (192t): Per-Operator Compute & Barrier — PP64+TG64\n"
+        "Red ratio = 8NUMA slower · Intel Xeon 8160",
         fontsize=13, fontweight="bold", y=1.01
     )
     fig.tight_layout()
@@ -340,7 +340,7 @@ def plot_e2e_walltime(data_1n, data_4n, output_path):
 
         ax = axes[0][col]
         ax.bar(x - width/2, t1, width, color="#4285F4", alpha=0.9, label="1NUMA (24t)")
-        ax.bar(x + width/2, t4, width, color="#EA4335", alpha=0.7, label="4NUMA (96t)")
+        ax.bar(x + width/2, t4, width, color="#EA4335", alpha=0.7, label="8NUMA (192t)")
 
         for i in range(n):
             if t1[i] > 0:
@@ -362,8 +362,8 @@ def plot_e2e_walltime(data_1n, data_4n, output_path):
             ax.legend(fontsize=9)
 
     fig.suptitle(
-        "End-to-End Wall Time: 1NUMA (24t) vs 4NUMA (96t) — PP64+TG64\n"
-        "Red = 4NUMA slower · Intel Xeon 8160",
+        "End-to-End Wall Time: 1NUMA (24t) vs 8NUMA (192t) — PP64+TG64\n"
+        "Red = 8NUMA slower · Intel Xeon 8160",
         fontsize=13, fontweight="bold", y=1.02
     )
     fig.tight_layout()
@@ -373,26 +373,26 @@ def plot_e2e_walltime(data_1n, data_4n, output_path):
 
 def main():
     dir_1n = os.path.join(BASE_DIR, "raw_data_pp64tg64")
-    dir_4n = os.path.join(BASE_DIR, "raw_data_pp64tg64_4numa")
+    dir_4n = os.path.join(BASE_DIR, "raw_data_pp64tg64_8numa")
 
     data_1n = load_all(dir_1n)
     data_4n = load_all(dir_4n)
 
     # Chart 1: Per-op time stacked
     plot_per_op_time(data_1n, data_4n,
-                     os.path.join(BASE_DIR, "compare_1v4_per_op.png"))
+                     os.path.join(BASE_DIR, "compare_1v8_per_op.png"))
 
     # Chart 2: Barrier% comparison
     plot_breakdown_compare(data_1n, data_4n,
-                           os.path.join(BASE_DIR, "compare_1v4_barrier_pct.png"))
+                           os.path.join(BASE_DIR, "compare_1v8_barrier_pct.png"))
 
     # Chart 3: Compute + Barrier absolute split
     plot_compute_and_barrier_abs(data_1n, data_4n,
-                                 os.path.join(BASE_DIR, "compare_1v4_compute_barrier.png"))
+                                 os.path.join(BASE_DIR, "compare_1v8_compute_barrier.png"))
 
     # Chart 4: E2E wall time
     plot_e2e_walltime(data_1n, data_4n,
-                      os.path.join(BASE_DIR, "compare_1v4_e2e.png"))
+                      os.path.join(BASE_DIR, "compare_1v8_e2e.png"))
 
 
 if __name__ == "__main__":
