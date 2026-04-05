@@ -237,8 +237,8 @@ def plot_breakdown_compare(data_1n, data_4n, output_path):
             ax.legend(handles=legend_elements, fontsize=7, loc="lower right", ncol=2)
 
     fig.suptitle(
-        "Barrier% Comparison: 1NUMA (solid) vs 4NUMA (faded) — PP64+TG64\n"
-        "Intel Xeon 8160 · PP64 TG32",
+        "Barrier% Comparison: 1NUMA (solid) vs 8NUMA (faded) — PP64+TG64\n"
+        "Intel Xeon 8160 · PP64 TG64",
         fontsize=13, fontweight="bold", y=1.02
     )
     fig.tight_layout()
@@ -372,8 +372,8 @@ def plot_e2e_walltime(data_1n, data_4n, output_path):
 
 
 def main():
-    dir_1n = os.path.join(BASE_DIR, "raw_data_pp64tg64")
-    dir_4n = os.path.join(BASE_DIR, "raw_data_pp64tg64_8numa")
+    dir_1n = os.path.join(BASE_DIR, "raw_data_pp64tg64_rerun")
+    dir_4n = os.path.join(BASE_DIR, "raw_data_pp64tg64_8numa_rerun")
 
     data_1n = load_all(dir_1n)
     data_4n = load_all(dir_4n)
