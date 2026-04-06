@@ -1,0 +1,139 @@
+build: 62 (f56d77b) with cc (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0 for x86_64-linux-gnu
+/proc/sys/kernel/numa_balancing is enabled, this has been observed to impair performance
+llama_model_loader: loaded meta data with 29 key-value pairs and 292 tensors from /home/haibin/model/Meta-Llama-3.1-8B-Instruct.FP16.gguf (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = llama
+llama_model_loader: - kv   1:                               general.type str              = model
+llama_model_loader: - kv   2:                               general.name str              = Meta Llama 3.1 8B Instruct
+llama_model_loader: - kv   3:                           general.finetune str              = Instruct
+llama_model_loader: - kv   4:                           general.basename str              = Meta-Llama-3.1
+llama_model_loader: - kv   5:                         general.size_label str              = 8B
+llama_model_loader: - kv   6:                            general.license str              = llama3.1
+llama_model_loader: - kv   7:                               general.tags arr[str,6]       = ["facebook", "meta", "pytorch", "llam...
+llama_model_loader: - kv   8:                          general.languages arr[str,8]       = ["en", "de", "fr", "it", "pt", "hi", ...
+llama_model_loader: - kv   9:                          llama.block_count u32              = 32
+llama_model_loader: - kv  10:                       llama.context_length u32              = 131072
+llama_model_loader: - kv  11:                     llama.embedding_length u32              = 4096
+llama_model_loader: - kv  12:                  llama.feed_forward_length u32              = 14336
+llama_model_loader: - kv  13:                 llama.attention.head_count u32              = 32
+llama_model_loader: - kv  14:              llama.attention.head_count_kv u32              = 8
+llama_model_loader: - kv  15:                       llama.rope.freq_base f32              = 500000.000000
+llama_model_loader: - kv  16:     llama.attention.layer_norm_rms_epsilon f32              = 0.000010
+llama_model_loader: - kv  17:                          general.file_type u32              = 1
+llama_model_loader: - kv  18:                           llama.vocab_size u32              = 128256
+llama_model_loader: - kv  19:                 llama.rope.dimension_count u32              = 128
+llama_model_loader: - kv  20:                       tokenizer.ggml.model str              = gpt2
+llama_model_loader: - kv  21:                         tokenizer.ggml.pre str              = llama-bpe
+llama_model_loader: - kv  22:                      tokenizer.ggml.tokens arr[str,128256]  = ["!", "\"", "#", "$", "%", "&", "'", ...
+llama_model_loader: - kv  23:                  tokenizer.ggml.token_type arr[i32,128256]  = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+llama_model_loader: - kv  24:                      tokenizer.ggml.merges arr[str,280147]  = ["Ġ Ġ", "Ġ ĠĠĠ", "ĠĠ ĠĠ", "...
+llama_model_loader: - kv  25:                tokenizer.ggml.bos_token_id u32              = 128000
+llama_model_loader: - kv  26:                tokenizer.ggml.eos_token_id u32              = 128009
+llama_model_loader: - kv  27:                    tokenizer.chat_template str              = {% set loop_messages = messages %}{% ...
+llama_model_loader: - kv  28:               general.quantization_version u32              = 2
+llama_model_loader: - type  f32:   66 tensors
+llama_model_loader: - type  f16:  226 tensors
+print_info: file format = GGUF V3 (latest)
+print_info: file type   = F16
+print_info: file size   = 14.96 GiB (16.00 BPW) 
+load: special tokens cache size = 256
+load: token to piece cache size = 0.7999 MB
+print_info: arch             = llama
+print_info: vocab_only       = 0
+print_info: n_ctx_train      = 131072
+print_info: n_embd           = 4096
+print_info: n_layer          = 32
+print_info: n_head           = 32
+print_info: n_head_kv        = 8
+print_info: n_rot            = 128
+print_info: n_swa            = 0
+print_info: is_swa_any       = 0
+print_info: n_embd_head_k    = 128
+print_info: n_embd_head_v    = 128
+print_info: n_gqa            = 4
+print_info: n_embd_k_gqa     = 1024
+print_info: n_embd_v_gqa     = 1024
+print_info: f_norm_eps       = 0.0e+00
+print_info: f_norm_rms_eps   = 1.0e-05
+print_info: f_clamp_kqv      = 0.0e+00
+print_info: f_max_alibi_bias = 0.0e+00
+print_info: f_logit_scale    = 0.0e+00
+print_info: f_attn_scale     = 0.0e+00
+print_info: n_ff             = 14336
+print_info: n_expert         = 0
+print_info: n_expert_used    = 0
+print_info: causal attn      = 1
+print_info: pooling type     = 0
+print_info: rope type        = 0
+print_info: rope scaling     = linear
+print_info: freq_base_train  = 500000.0
+print_info: freq_scale_train = 1
+print_info: n_ctx_orig_yarn  = 131072
+print_info: rope_finetuned   = unknown
+print_info: ssm_d_conv       = 0
+print_info: ssm_d_inner      = 0
+print_info: ssm_d_state      = 0
+print_info: ssm_dt_rank      = 0
+print_info: ssm_dt_b_c_rms   = 0
+print_info: model type       = 8B
+print_info: model params     = 8.03 B
+print_info: general.name     = Meta Llama 3.1 8B Instruct
+print_info: vocab type       = BPE
+print_info: n_vocab          = 128256
+print_info: n_merges         = 280147
+print_info: BOS token        = 128000 '<|begin_of_text|>'
+print_info: EOS token        = 128009 '<|eot_id|>'
+print_info: EOT token        = 128009 '<|eot_id|>'
+print_info: EOM token        = 128008 '<|eom_id|>'
+print_info: LF token         = 198 'Ċ'
+print_info: EOG token        = 128001 '<|end_of_text|>'
+print_info: EOG token        = 128008 '<|eom_id|>'
+print_info: EOG token        = 128009 '<|eot_id|>'
+print_info: max token length = 256
+load_tensors: loading model tensors, this can take a while... (mmap = true)
+load_tensors:   CPU_Mapped model buffer size = 15317.02 MiB
+.........................................................................................
+llama_context: constructing llama_context
+llama_context: n_seq_max     = 1
+llama_context: n_ctx         = 4096
+llama_context: n_ctx_per_seq = 4096
+llama_context: n_batch       = 512
+llama_context: n_ubatch      = 256
+llama_context: causal_attn   = 1
+llama_context: flash_attn    = 0
+llama_context: freq_base     = 500000.0
+llama_context: freq_scale    = 1
+llama_context: n_ctx_per_seq (4096) < n_ctx_train (131072) -- the full capacity of the model will not be utilized
+llama_context:        CPU  output buffer size =     0.49 MiB
+llama_kv_cache_unified:        CPU KV buffer size =   512.00 MiB
+llama_kv_cache_unified: size =  512.00 MiB (  4096 cells,  32 layers,  1 seqs), K (f16):  256.00 MiB, V (f16):  256.00 MiB
+llama_context:        CPU compute buffer size =   148.00 MiB
+llama_context: graph nodes  = 1158
+llama_context: graph splits = 1
+GGML_PERF_ALL|nth=96|graph_us=789325.8|avg_compute_us=576276.6|avg_barrier_us=200785.6|avg_idle_us=12263.6|t0_compute_us=593283.5|t0_barrier_us=195384.6|t0_idle_us=657.6|max_compute_us=694888.8|min_compute_us=400478.9
+GGML_PERF_THREADS|nth=96|t0=593283.5|t1=664581.9|t2=554810.3|t3=512170.0|t4=466084.1|t5=561873.4|t6=674468.0|t7=596030.9|t8=605538.5|t9=675520.6|t10=575179.1|t11=505077.5|t12=477497.6|t13=580693.4|t14=694888.8|t15=599407.5|t16=593338.3|t17=663416.0|t18=564269.8|t19=514081.2|t20=480225.1|t21=579208.0|t22=674752.0|t23=594138.8|t24=601305.0|t25=656550.4|t26=570281.0|t27=498526.4|t28=476776.7|t29=561316.5|t30=672920.9|t31=596935.1|t32=603594.9|t33=657951.7|t34=570381.5|t35=515415.0|t36=468476.9|t37=563660.3|t38=660475.0|t39=583217.1|t40=588881.0|t41=667772.7|t42=579032.6|t43=510337.3|t44=475269.4|t45=557007.0|t46=674958.1|t47=580931.4|t48=604258.1|t49=661799.5|t50=557755.7|t51=500769.3|t52=476870.9|t53=577608.3|t54=671080.8|t55=580824.0|t56=608166.3|t57=674897.8|t58=563013.1|t59=518079.7|t60=498080.5|t61=583308.3|t62=673285.0|t63=581873.2|t64=601519.6|t65=662054.8|t66=574452.2|t67=501730.9|t68=474270.9|t69=561647.3|t70=674851.7|t71=581242.2|t72=587234.7|t73=658176.1|t74=569075.8|t75=499778.3|t76=463617.3|t77=556770.5|t78=673870.6|t79=578670.1|t80=600809.5|t81=656590.7|t82=563348.4|t83=518592.2|t84=472747.4|t85=571696.0|t86=638915.4|t87=576687.5|t88=566967.2|t89=648750.6|t90=552754.8|t91=500039.3|t92=450490.0|t93=546156.4|t94=614392.6|t95=400478.9
+GGML_PERF_ALL|nth=96|graph_us=3498252.1|avg_compute_us=3201888.3|avg_barrier_us=286215.1|avg_idle_us=10148.7|t0_compute_us=3297034.0|t0_barrier_us=193745.9|t0_idle_us=7472.1|max_compute_us=3462693.8|min_compute_us=2699357.4
+GGML_PERF_THREADS|nth=96|t0=3297034.0|t1=3388330.8|t2=3269877.8|t3=2831425.6|t4=3154677.6|t5=3244591.5|t6=3429500.4|t7=3279823.5|t8=3329357.1|t9=3414620.1|t10=3282077.0|t11=2844835.4|t12=3167766.6|t13=3248518.9|t14=3460088.6|t15=3307150.3|t16=3320209.4|t17=3421792.5|t18=3288640.3|t19=2843435.5|t20=3166965.8|t21=3269913.7|t22=3462693.8|t23=3312786.1|t24=3321732.8|t25=3423676.2|t26=3295403.0|t27=2835408.4|t28=3162205.3|t29=3264122.1|t30=3460168.3|t31=3304792.9|t32=3315487.0|t33=3404552.1|t34=3279517.7|t35=2835575.6|t36=3149707.0|t37=3251813.7|t38=3453107.2|t39=3303146.3|t40=3316263.5|t41=3399326.9|t42=3283602.2|t43=2835501.1|t44=3147787.8|t45=3249560.5|t46=3445755.5|t47=3292888.2|t48=3309287.0|t49=3401165.3|t50=3290299.0|t51=2838135.5|t52=3145335.0|t53=3256796.4|t54=3448445.2|t55=3303384.7|t56=3331784.3|t57=3409641.6|t58=3289064.0|t59=2841138.1|t60=3174357.2|t61=3250474.7|t62=3452415.2|t63=3290911.0|t64=3210408.3|t65=3287114.2|t66=3149269.4|t67=2706013.4|t68=3014795.3|t69=3113842.5|t70=3315282.2|t71=3168028.6|t72=3215279.1|t73=3284084.5|t74=3146782.2|t75=2699357.4|t76=3010185.7|t77=3117034.7|t78=3317743.6|t79=3158348.7|t80=3208966.5|t81=3283624.1|t82=3155062.2|t83=2705670.5|t84=3012103.0|t85=3118576.5|t86=3318840.3|t87=3171477.9|t88=3218654.6|t89=3288816.4|t90=3148357.2|t91=2717430.9|t92=3019644.6|t93=3102726.6|t94=3176399.8|t95=2721507.9
+GGML_PERF_ALL|nth=96|graph_us=668133.9|avg_compute_us=516833.9|avg_barrier_us=140575.4|avg_idle_us=10724.6|t0_compute_us=541319.3|t0_barrier_us=118301.6|t0_idle_us=8513.0|max_compute_us=641615.5|min_compute_us=319935.0
+GGML_PERF_THREADS|nth=96|t0=541319.3|t1=633482.1|t2=518032.9|t3=508691.2|t4=333036.6|t5=477211.0|t6=641518.0|t7=535699.5|t8=541484.4|t9=634658.7|t10=518221.8|t11=505530.5|t12=334406.9|t13=467007.2|t14=640252.3|t15=533867.5|t16=539104.4|t17=633070.8|t18=518286.1|t19=507879.4|t20=333493.9|t21=474812.0|t22=640704.1|t23=534534.3|t24=539572.4|t25=634145.2|t26=513709.9|t27=504877.1|t28=333547.0|t29=474151.6|t30=641304.5|t31=533903.4|t32=539749.6|t33=634766.6|t34=513255.2|t35=505794.8|t36=333735.9|t37=471896.5|t38=641615.5|t39=534511.7|t40=540531.4|t41=631199.8|t42=516331.9|t43=503857.3|t44=334122.1|t45=470174.2|t46=638927.4|t47=534882.8|t48=540555.7|t49=633096.8|t50=515607.5|t51=505798.6|t52=332290.0|t53=472444.3|t54=641049.0|t55=534870.4|t56=544351.7|t57=634846.9|t58=513580.9|t59=505479.3|t60=333377.3|t61=471426.3|t62=636796.9|t63=534538.3|t64=538158.0|t65=633383.0|t66=514034.6|t67=504420.9|t68=334410.4|t69=469761.0|t70=639267.6|t71=533731.8|t72=539009.1|t73=631634.8|t74=513985.5|t75=503069.3|t76=331963.5|t77=470419.3|t78=639409.8|t79=532819.6|t80=531900.0|t81=628045.4|t82=508049.3|t83=503269.0|t84=327447.9|t85=464741.3|t86=633865.0|t87=526944.1|t88=532810.1|t89=627893.9|t90=508797.0|t91=504286.7|t92=328151.4|t93=385873.2|t94=537589.8|t95=319935.0
+{"n_kv_max": 4096, "n_batch": 512, "n_ubatch": 256, "flash_attn": 0, "is_pp_shared": 0, "n_gpu_layers": -1, "n_threads": 96, "n_threads_batch": 96, "pp": 128, "tg": 1, "pl": 1, "n_kv": 129, "t_pp": 3.504497, "speed_pp": 36.524498, "t_tg": 0.670163, "speed_tg": 1.492174, "t": 4.174660, "speed": 30.900719}
+GGML_PERF_ALL|nth=96|graph_us=6213687.2|avg_compute_us=5814645.5|avg_barrier_us=386785.2|avg_idle_us=12256.4|t0_compute_us=5888234.9|t0_barrier_us=316948.9|t0_idle_us=8503.4|max_compute_us=6155755.7|min_compute_us=4799517.4
+GGML_PERF_THREADS|nth=96|t0=5888234.9|t1=5992416.7|t2=5872199.9|t3=5130877.6|t4=5873490.1|t5=5976046.0|t6=6155755.7|t7=5950601.1|t8=5931069.9|t9=6042286.0|t10=5947595.7|t11=5142852.5|t12=5896579.7|t13=5965351.5|t14=6149769.9|t15=5946725.2|t16=5934185.9|t17=6048733.0|t18=5946954.7|t19=5154721.5|t20=5904874.2|t21=5977147.2|t22=6144977.0|t23=5927657.2|t24=5917022.1|t25=6040144.6|t26=5953109.5|t27=5142340.2|t28=5903376.5|t29=5973976.5|t30=6134774.7|t31=5931664.9|t32=5927884.2|t33=6018675.4|t34=5923768.0|t35=5117355.2|t36=5873371.5|t37=5961630.6|t38=6137648.8|t39=5929441.3|t40=5924964.8|t41=6020280.7|t42=5938502.4|t43=5143874.1|t44=5891411.0|t45=5952849.7|t46=6127088.8|t47=5904389.8|t48=5916143.4|t49=6030833.6|t50=5938820.1|t51=5151686.2|t52=5886779.6|t53=5965366.4|t54=6132234.0|t55=5925458.0|t56=5948499.0|t57=6020275.6|t58=5936150.7|t59=5125690.7|t60=5868111.9|t61=5948942.2|t62=6120659.5|t63=5917856.4|t64=5923038.8|t65=6012601.4|t66=5928781.1|t67=5141491.1|t68=5885395.8|t69=5957954.6|t70=6112197.3|t71=5901058.6|t72=5886284.2|t73=6017400.6|t74=5914716.4|t75=5139527.2|t76=5868653.2|t77=5960546.1|t78=6081431.1|t79=5913119.3|t80=5846288.9|t81=5998183.1|t82=5803176.2|t83=5130602.3|t84=5835565.9|t85=5739472.0|t86=5786409.2|t87=5569259.2|t88=5681968.6|t89=5731379.5|t90=5582376.4|t91=4799517.4|t92=5528707.2|t93=5584036.8|t94=5608192.9|t95=4812481.8
+GGML_PERF_ALL|nth=96|graph_us=709217.5|avg_compute_us=558173.5|avg_barrier_us=140311.8|avg_idle_us=10732.2|t0_compute_us=582574.1|t0_barrier_us=117923.8|t0_idle_us=8719.6|max_compute_us=682349.7|min_compute_us=360115.4
+GGML_PERF_THREADS|nth=96|t0=582574.1|t1=677455.4|t2=560435.6|t3=548248.7|t4=382968.1|t5=517387.4|t6=682104.2|t7=576712.4|t8=582989.2|t9=678910.3|t10=561987.7|t11=545190.0|t12=383399.8|t13=505415.3|t14=681286.6|t15=575275.6|t16=581481.7|t17=677695.8|t18=560791.9|t19=549174.2|t20=383016.6|t21=512915.3|t22=681783.9|t23=574753.4|t24=581293.5|t25=677504.6|t26=557293.3|t27=546162.9|t28=383266.9|t29=512782.3|t30=682349.7|t31=576610.5|t32=581083.3|t33=678993.4|t34=557721.6|t35=546125.5|t36=382610.5|t37=512331.4|t38=681489.3|t39=575879.0|t40=581952.6|t41=673603.2|t42=559051.1|t43=544965.4|t44=383582.5|t45=506838.7|t46=680237.8|t47=575740.3|t48=582345.9|t49=677481.9|t50=558681.9|t51=545623.9|t52=382098.1|t53=511040.5|t54=681427.9|t55=576079.6|t56=586352.6|t57=678361.6|t58=557557.8|t59=544694.0|t60=382803.1|t61=508028.9|t62=679281.0|t63=575441.4|t64=574604.2|t65=666464.6|t66=550063.0|t67=541064.9|t68=376431.9|t69=500317.1|t70=674166.9|t71=568638.8|t72=574889.2|t73=670076.4|t74=550228.7|t75=539582.4|t76=376433.8|t77=504078.4|t78=674048.2|t79=567931.2|t80=574499.3|t81=670621.6|t82=550430.1|t83=542996.4|t84=375475.8|t85=503106.1|t86=674251.1|t87=568471.7|t88=574415.1|t89=670276.4|t90=550836.8|t91=544093.4|t92=376671.2|t93=427670.2|t94=580983.1|t95=360115.4
+{"n_kv_max": 4096, "n_batch": 512, "n_ubatch": 256, "flash_attn": 0, "is_pp_shared": 0, "n_gpu_layers": -1, "n_threads": 96, "n_threads_batch": 96, "pp": 256, "tg": 1, "pl": 1, "n_kv": 257, "t_pp": 6.216030, "speed_pp": 41.183842, "t_tg": 0.711268, "speed_tg": 1.405940, "t": 6.927298, "speed": 37.099602}
+GGML_PERF_ALL|nth=96|graph_us=6135327.6|avg_compute_us=5755239.1|avg_barrier_us=377069.0|avg_idle_us=3019.5|t0_compute_us=5845610.9|t0_barrier_us=289229.1|t0_idle_us=487.6|max_compute_us=6080322.8|min_compute_us=4729089.6
+GGML_PERF_THREADS|nth=96|t0=5845610.9|t1=5921762.6|t2=5813919.0|t3=5062013.5|t4=5825076.3|t5=5918533.9|t6=6080322.8|t7=5883139.4|t8=5891477.7|t9=5971806.0|t10=5883555.4|t11=5077898.4|t12=5849154.6|t13=5916963.7|t14=6072745.1|t15=5893350.4|t16=5892379.6|t17=5976706.8|t18=5889866.6|t19=5091326.0|t20=5856356.7|t21=5921936.0|t22=6072751.1|t23=5873015.7|t24=5875653.3|t25=5968096.0|t26=5898107.2|t27=5076735.0|t28=5852973.7|t29=5918744.9|t30=6058181.1|t31=5870023.9|t32=5888993.9|t33=5946611.6|t34=5870104.1|t35=5047632.7|t36=5826207.0|t37=5906625.6|t38=6061978.7|t39=5870998.1|t40=5881895.7|t41=5951250.9|t42=5879860.2|t43=5081696.1|t44=5846406.8|t45=5903330.3|t46=6053296.1|t47=5848353.3|t48=5876103.8|t49=5957171.0|t50=5880004.5|t51=5087677.7|t52=5837994.8|t53=5911621.1|t54=6056064.2|t55=5870218.1|t56=5902935.2|t57=5944739.0|t58=5879090.8|t59=5058407.4|t60=5816821.9|t61=5897088.6|t62=6045350.9|t63=5864662.8|t64=5882128.3|t65=5943260.9|t66=5873201.5|t67=5077204.8|t68=5837292.6|t69=5908913.0|t70=6037412.4|t71=5843608.5|t72=5846917.5|t73=5944398.0|t74=5855403.2|t75=5071209.6|t76=5815868.8|t77=5910239.7|t78=6010374.3|t79=5853605.8|t80=5806344.6|t81=5922118.6|t82=5748466.3|t83=5063355.7|t84=5785450.7|t85=5684120.0|t86=5706850.0|t87=5506055.4|t88=5639351.3|t89=5651854.5|t90=5514601.9|t91=4729089.6|t92=5475869.5|t93=5530873.5|t94=5524016.4|t95=4752123.0
+GGML_PERF_ALL|nth=96|graph_us=6224735.1|avg_compute_us=5836173.4|avg_barrier_us=376374.5|avg_idle_us=12187.2|t0_compute_us=5958406.0|t0_barrier_us=257631.2|t0_idle_us=8697.9|max_compute_us=6164176.3|min_compute_us=4806200.2
+GGML_PERF_THREADS|nth=96|t0=5958406.0|t1=6008030.7|t2=5884369.0|t3=5142238.6|t4=5906842.7|t5=5990760.6|t6=6164176.3|t7=5964333.8|t8=6003246.2|t9=6054151.5|t10=5951564.4|t11=5151080.9|t12=5936445.5|t13=5978494.7|t14=6154495.8|t15=5963589.3|t16=6007182.1|t17=6062233.2|t18=5956709.0|t19=5163072.0|t20=5933261.6|t21=5990375.0|t22=6154838.1|t23=5950221.4|t24=5992569.4|t25=6055079.0|t26=5963500.0|t27=5155674.3|t28=5941024.0|t29=5988486.7|t30=6146024.0|t31=5948988.5|t32=6006111.6|t33=6034160.7|t34=5930014.3|t35=5125255.6|t36=5906908.9|t37=5972652.2|t38=6144917.4|t39=5936981.0|t40=5993024.4|t41=6035965.0|t42=5950216.4|t43=5150015.9|t44=5923074.2|t45=5967145.6|t46=6143863.8|t47=5928598.2|t48=5993322.2|t49=6046575.3|t50=5950918.2|t51=5159027.9|t52=5917746.5|t53=5975134.1|t54=6145140.3|t55=5945576.1|t56=6005045.2|t57=6035837.5|t58=5945942.8|t59=5138281.0|t60=5904333.6|t61=5964214.1|t62=6131248.2|t63=5943783.9|t64=5995685.8|t65=6028606.5|t66=5935392.6|t67=5154395.5|t68=5915230.6|t69=5970510.8|t70=6124780.1|t71=5931639.2|t72=5954517.3|t73=6034334.8|t74=5920294.5|t75=5143508.4|t76=5893874.9|t77=5972280.1|t78=6092056.4|t79=5928721.9|t80=5912891.1|t81=6011515.3|t82=5817712.9|t83=5144227.8|t84=5865140.1|t85=5754557.3|t86=5789268.7|t87=5579278.6|t88=5746601.4|t89=5733571.7|t90=5577569.2|t91=4808299.3|t92=5557250.9|t93=5593082.0|t94=5607150.3|t95=4806200.2
+GGML_PERF_ALL|nth=96|graph_us=725769.7|avg_compute_us=573404.8|avg_barrier_us=141564.9|avg_idle_us=10800.0|t0_compute_us=601711.3|t0_barrier_us=115454.9|t0_idle_us=8603.4|max_compute_us=698693.6|min_compute_us=359043.3
+GGML_PERF_THREADS|nth=96|t0=601711.3|t1=690695.6|t2=577439.3|t3=561918.3|t4=401113.3|t5=535922.2|t6=698555.5|t7=594049.2|t8=600842.2|t9=693692.4|t10=578466.9|t11=559523.4|t12=402699.4|t13=524382.0|t14=698693.6|t15=593247.5|t16=599534.6|t17=692724.0|t18=576723.5|t19=562085.2|t20=402352.6|t21=531245.0|t22=697416.6|t23=593633.9|t24=599570.2|t25=692097.4|t26=573926.0|t27=558481.7|t28=400952.4|t29=532333.3|t30=698044.7|t31=594243.1|t32=599694.7|t33=691831.0|t34=574142.1|t35=557790.1|t36=401664.8|t37=531054.0|t38=697530.2|t39=593482.6|t40=600538.4|t41=689081.2|t42=575925.6|t43=557887.4|t44=402897.2|t45=527350.8|t46=697617.1|t47=593412.9|t48=599548.2|t49=692196.6|t50=573931.8|t51=557812.5|t52=401412.4|t53=529679.3|t54=697234.3|t55=593869.0|t56=599626.3|t57=693475.5|t58=573467.9|t59=558742.5|t60=401897.8|t61=527444.6|t62=695219.3|t63=592231.0|t64=589500.4|t65=680125.9|t66=565141.8|t67=551830.7|t68=392477.3|t69=517770.3|t70=686479.9|t71=583262.1|t72=589272.1|t73=684141.6|t74=564783.7|t75=551611.9|t76=392420.9|t77=518475.3|t78=687385.4|t79=582292.4|t80=589156.4|t81=682950.4|t82=565095.0|t83=552923.6|t84=391554.4|t85=519202.3|t86=687301.0|t87=583576.5|t88=589174.7|t89=682436.6|t90=564555.8|t91=551420.8|t92=382807.0|t93=429609.7|t94=581073.9|t95=359043.3
+{"n_kv_max": 4096, "n_batch": 512, "n_ubatch": 256, "flash_attn": 0, "is_pp_shared": 0, "n_gpu_layers": -1, "n_threads": 96, "n_threads_batch": 96, "pp": 512, "tg": 1, "pl": 1, "n_kv": 513, "t_pp": 12.364852, "speed_pp": 41.407692, "t_tg": 0.727888, "speed_tg": 1.373838, "t": 13.092740, "speed": 39.182018}
+
+main: note: llama_perf_context_print classifies any synchronized decode with more than one queued token as prompt eval; for batched TG with pl > 1, rely on the table above for PP/TG split.
+llama_perf_context_print:        load time =    1510.72 ms
+llama_perf_context_print: prompt eval time =   22085.06 ms /   896 tokens (   24.65 ms per token,    40.57 tokens per second)
+llama_perf_context_print:        eval time =    2109.15 ms /     3 runs   (  703.05 ms per token,     1.42 tokens per second)
+llama_perf_context_print:       total time =   24194.91 ms /   899 tokens
+
+

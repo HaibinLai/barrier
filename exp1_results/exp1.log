@@ -1,0 +1,598 @@
+[02:55:43] ==========================================
+[02:55:43] Experiment 1: Overall Performance
+[02:55:43] Start: Mon Apr  6 02:55:43 AM UTC 2026
+[02:55:43] Repeats: 3
+[02:55:43] ==========================================
+[02:55:43] 
+[02:55:43] ############## REPEAT 1/3 ##############
+[02:55:43] 
+[02:55:43] ====== 1NUMA, 24 threads ======
+[02:55:43] 
+[02:55:43]   Model: qwen3_4b
+[02:55:43]   RUN: 1N FJ-Pure decode -> qwen3_4b_1n_fj_decode_r1.jsonl
+[02:56:12]   B=1: PP=45.1 TG=2.45 t/s
+[02:56:12]   RUN: 1N TaskInfer decode -> qwen3_4b_1n_task_decode_r1.jsonl
+[02:56:22]   B=1: PP=59.4 TG=8.55 t/s
+[02:56:22]   RUN: 1N FJ-Pure prefill -> qwen3_4b_1n_fj_prefill_r1.jsonl
+[02:56:43]   B=1: PP=58.7 TG=2.24 t/s
+  B=1: PP=47.0 TG=2.17 t/s
+  B=1: PP=46.5 TG=2.19 t/s
+[02:56:43]   RUN: 1N TaskInfer prefill -> qwen3_4b_1n_task_prefill_r1.jsonl
+[02:57:00]   B=1: PP=61.7 TG=8.53 t/s
+  B=1: PP=58.7 TG=8.53 t/s
+  B=1: PP=58.9 TG=8.41 t/s
+[02:57:00]   RUN: 1N FJ-Pure batch -> qwen3_4b_1n_fj_batch_r1.jsonl
+[02:58:47]   B=1: PP=46.5 TG=2.36 t/s
+  B=4: PP=47.3 TG=7.12 t/s
+  B=8: PP=46.7 TG=16.76 t/s
+  B=16: PP=45.3 TG=28.41 t/s
+[02:58:47]   RUN: 1N TaskInfer batch -> qwen3_4b_1n_task_batch_r1.jsonl
+[02:59:50]   B=1: PP=57.6 TG=8.26 t/s
+  B=4: PP=58.2 TG=25.86 t/s
+  B=8: PP=59.0 TG=34.31 t/s
+  B=16: PP=57.6 TG=37.72 t/s
+[02:59:50] 
+[02:59:50]   Model: llama3_8b
+[02:59:50]   RUN: 1N FJ-Pure decode -> llama3_8b_1n_fj_decode_r1.jsonl
+[03:00:22]   B=1: PP=44.0 TG=2.27 t/s
+[03:00:22]   RUN: 1N TaskInfer decode -> llama3_8b_1n_task_decode_r1.jsonl
+[03:01:25]   B=1: PP=29.8 TG=1.10 t/s
+[03:01:25]   RUN: 1N FJ-Pure prefill -> llama3_8b_1n_fj_prefill_r1.jsonl
+[03:01:46]   B=1: PP=48.2 TG=2.26 t/s
+  B=1: PP=49.4 TG=2.24 t/s
+  B=1: PP=49.6 TG=2.25 t/s
+[03:01:46]   RUN: 1N TaskInfer prefill -> llama3_8b_1n_task_prefill_r1.jsonl
+[03:02:17]   B=1: PP=34.1 TG=1.10 t/s
+  B=1: PP=33.3 TG=1.10 t/s
+  B=1: PP=35.1 TG=1.10 t/s
+[03:02:17]   RUN: 1N FJ-Pure batch -> llama3_8b_1n_fj_batch_r1.jsonl
+[03:04:08]   B=1: PP=40.2 TG=2.24 t/s
+  B=4: PP=44.7 TG=8.89 t/s
+  B=8: PP=44.2 TG=16.90 t/s
+  B=16: PP=40.4 TG=24.42 t/s
+[03:04:08]   RUN: 1N TaskInfer batch -> llama3_8b_1n_task_batch_r1.jsonl
+[03:07:10]   B=1: PP=29.7 TG=1.10 t/s
+  B=4: PP=36.2 TG=4.29 t/s
+  B=8: PP=36.5 TG=8.07 t/s
+  B=16: PP=34.5 TG=14.11 t/s
+[03:07:10] 
+[03:07:10] ====== 4NUMA, 96 threads, TP4 ======
+[03:07:10] 
+[03:07:10]   Model: qwen3_4b
+[03:07:10]   RUN: 4N FJ-Pure decode -> qwen3_4b_4n_fj_decode_r1.jsonl
+[03:08:13]   B=1: PP=20.8 TG=1.12 t/s
+[03:08:13]   RUN: 4N FJ+TP4 decode -> qwen3_4b_4n_fjtp_decode_r1.jsonl
+[03:08:46]   B=1: PP=66.3 TG=2.10 t/s
+[03:08:46]   RUN: 4N TaskInfer decode -> qwen3_4b_4n_task_decode_r1.jsonl
+[03:09:10]   B=1: PP=56.1 TG=3.25 t/s
+[03:09:10]   RUN: 4N FJ-Pure prefill -> qwen3_4b_4n_fj_prefill_r1.jsonl
+[03:09:52]   B=1: PP=21.4 TG=0.81 t/s
+  B=1: PP=25.2 TG=0.94 t/s
+  B=1: PP=25.3 TG=0.80 t/s
+[03:09:52]   RUN: 4N FJ+TP4 prefill -> qwen3_4b_4n_fjtp_prefill_r1.jsonl
+[03:10:05]   B=1: PP=83.1 TG=2.10 t/s
+  B=1: PP=100.4 TG=2.17 t/s
+  B=1: PP=101.1 TG=2.05 t/s
+[03:10:05]   RUN: 4N TaskInfer prefill -> qwen3_4b_4n_task_prefill_r1.jsonl
+[03:10:21]   B=1: PP=66.0 TG=3.26 t/s
+  B=1: PP=73.6 TG=3.27 t/s
+  B=1: PP=72.3 TG=3.18 t/s
+[03:10:21]   RUN: 4N FJ-Pure batch -> qwen3_4b_4n_fj_batch_r1.jsonl
+[03:14:29]   B=1: PP=18.7 TG=0.98 t/s
+  B=4: PP=25.4 TG=2.60 t/s
+  B=8: PP=25.1 TG=5.95 t/s
+  B=16: PP=24.6 TG=11.18 t/s
+[03:14:29]   RUN: 4N FJ+TP4 batch -> qwen3_4b_4n_fjtp_batch_r1.jsonl
+[03:16:00]   B=1: PP=66.9 TG=2.02 t/s
+  B=4: PP=98.4 TG=7.85 t/s
+  B=8: PP=99.2 TG=14.85 t/s
+  B=16: PP=95.2 TG=25.77 t/s
+[03:16:00]   RUN: 4N TaskInfer batch -> qwen3_4b_4n_task_batch_r1.jsonl
+[03:17:33]   B=1: PP=55.6 TG=3.25 t/s
+  B=4: PP=73.4 TG=10.12 t/s
+  B=8: PP=72.4 TG=16.21 t/s
+  B=16: PP=59.6 TG=22.61 t/s
+[03:17:33] 
+[03:17:33]   Model: llama3_8b
+[03:17:33]   RUN: 4N FJ-Pure decode -> llama3_8b_4n_fj_decode_r1.jsonl
+[03:18:20]   B=1: PP=34.8 TG=1.50 t/s
+[03:18:20]   RUN: 4N FJ+TP4 decode -> llama3_8b_4n_fjtp_decode_r1.jsonl
+[03:19:10]   B=1: PP=46.4 TG=1.35 t/s
+[03:19:10]   RUN: 4N TaskInfer decode -> llama3_8b_4n_task_decode_r1.jsonl
+[03:19:48]   B=1: PP=44.2 TG=2.06 t/s
+[03:19:48]   RUN: 4N FJ-Pure prefill -> llama3_8b_4n_fj_prefill_r1.jsonl
+[03:20:14]   B=1: PP=38.9 TG=1.49 t/s
+  B=1: PP=42.8 TG=1.50 t/s
+  B=1: PP=43.0 TG=1.50 t/s
+[03:20:14]   RUN: 4N FJ+TP4 prefill -> llama3_8b_4n_fjtp_prefill_r1.jsonl
+[03:20:31]   B=1: PP=61.6 TG=1.34 t/s
+  B=1: PP=72.8 TG=1.34 t/s
+  B=1: PP=72.6 TG=1.36 t/s
+[03:20:31]   RUN: 4N TaskInfer prefill -> llama3_8b_4n_task_prefill_r1.jsonl
+[03:20:51]   B=1: PP=55.5 TG=2.03 t/s
+  B=1: PP=65.3 TG=2.03 t/s
+  B=1: PP=67.1 TG=2.02 t/s
+[03:20:51]   RUN: 4N FJ-Pure batch -> llama3_8b_4n_fj_batch_r1.jsonl
+[03:23:20]   B=1: PP=34.4 TG=1.50 t/s
+  B=4: PP=42.0 TG=5.52 t/s
+  B=8: PP=42.5 TG=11.72 t/s
+  B=16: PP=33.3 TG=17.29 t/s
+[03:23:20]   RUN: 4N FJ+TP4 batch -> llama3_8b_4n_fjtp_batch_r1.jsonl
+[03:25:29]   B=1: PP=47.8 TG=1.36 t/s
+  B=4: PP=71.1 TG=5.30 t/s
+  B=8: PP=71.0 TG=10.31 t/s
+  B=16: PP=69.8 TG=18.72 t/s
+[03:25:29]   RUN: 4N TaskInfer batch -> llama3_8b_4n_task_batch_r1.jsonl
+[03:27:27]   B=1: PP=45.7 TG=2.03 t/s
+  B=4: PP=63.7 TG=6.89 t/s
+  B=8: PP=63.4 TG=12.16 t/s
+  B=16: PP=59.4 TG=19.28 t/s
+[03:27:27] 
+[03:27:27] ====== 8NUMA, 192 threads, TP8 ======
+[03:27:27] 
+[03:27:27]   Model: qwen3_4b
+[03:27:27]   RUN: 8N FJ-Pure decode -> qwen3_4b_8n_fj_decode_r1.jsonl
+[03:28:51]   B=1: PP=19.4 TG=0.82 t/s
+[03:28:51]   RUN: 8N FJ+TP8 decode -> qwen3_4b_8n_fjtp_decode_r1.jsonl
+[03:29:56]   B=1: PP=43.5 TG=1.05 t/s
+[03:29:56]   RUN: 8N TaskInfer decode -> qwen3_4b_8n_task_decode_r1.jsonl
+[03:30:24]   B=1: PP=43.4 TG=2.84 t/s
+[03:30:24]   RUN: 8N FJ-Pure prefill -> qwen3_4b_8n_fj_prefill_r1.jsonl
+[03:31:31]   B=1: PP=15.7 TG=0.58 t/s
+  B=1: PP=14.9 TG=0.62 t/s
+  B=1: PP=15.0 TG=0.62 t/s
+[03:31:31]   RUN: 8N FJ+TP8 prefill -> qwen3_4b_8n_fjtp_prefill_r1.jsonl
+[03:31:47]   B=1: PP=69.1 TG=1.13 t/s
+  B=1: PP=86.6 TG=0.96 t/s
+  B=1: PP=88.5 TG=1.04 t/s
+[03:31:47]   RUN: 8N TaskInfer prefill -> qwen3_4b_8n_task_prefill_r1.jsonl
+[03:32:10]   B=1: PP=48.9 TG=2.82 t/s
+  B=1: PP=48.1 TG=2.67 t/s
+  B=1: PP=48.8 TG=2.61 t/s
+[03:32:10]   RUN: 8N FJ-Pure batch -> qwen3_4b_8n_fj_batch_r1.jsonl
+[03:38:59]   B=1: PP=16.7 TG=0.65 t/s
+  B=4: PP=15.3 TG=1.69 t/s
+  B=8: PP=15.2 TG=3.23 t/s
+  B=16: PP=14.7 TG=6.55 t/s
+[03:38:59]   RUN: 8N FJ+TP8 batch -> qwen3_4b_8n_fjtp_batch_r1.jsonl
+[03:41:47]   B=1: PP=43.2 TG=1.00 t/s
+  B=4: PP=79.8 TG=3.45 t/s
+  B=8: PP=80.9 TG=7.27 t/s
+  B=16: PP=80.1 TG=13.57 t/s
+[03:41:47]   RUN: 8N TaskInfer batch -> qwen3_4b_8n_task_batch_r1.jsonl
+[03:43:56]   B=1: PP=42.8 TG=2.82 t/s
+  B=4: PP=46.9 TG=7.91 t/s
+  B=8: PP=46.4 TG=12.17 t/s
+  B=16: PP=37.6 TG=16.35 t/s
+[03:43:56] 
+[03:43:56]   Model: llama3_8b
+[03:43:56]   RUN: 8N FJ-Pure decode -> llama3_8b_8n_fj_decode_r1.jsonl
+[03:45:04]   B=1: PP=22.9 TG=1.03 t/s
+[03:45:04]   RUN: 8N FJ+TP8 decode -> llama3_8b_8n_fjtp_decode_r1.jsonl
+[03:46:13]   B=1: PP=42.2 TG=0.99 t/s
+[03:46:13]   RUN: 8N TaskInfer decode -> llama3_8b_8n_task_decode_r1.jsonl
+[03:46:51]   B=1: PP=37.2 TG=2.10 t/s
+[03:46:51]   RUN: 8N FJ-Pure prefill -> llama3_8b_8n_fj_prefill_r1.jsonl
+[03:47:32]   B=1: PP=24.1 TG=0.97 t/s
+  B=1: PP=25.3 TG=0.93 t/s
+  B=1: PP=25.3 TG=0.93 t/s
+[03:47:32]   RUN: 8N FJ+TP8 prefill -> llama3_8b_8n_fjtp_prefill_r1.jsonl
+[03:47:49]   B=1: PP=60.6 TG=0.95 t/s
+  B=1: PP=82.3 TG=1.03 t/s
+  B=1: PP=81.4 TG=1.02 t/s
+[03:47:49]   RUN: 8N TaskInfer prefill -> llama3_8b_8n_task_prefill_r1.jsonl
+[03:48:14]   B=1: PP=42.8 TG=2.09 t/s
+  B=1: PP=51.1 TG=2.08 t/s
+  B=1: PP=51.0 TG=2.04 t/s
+[03:48:14]   RUN: 8N FJ-Pure batch -> llama3_8b_8n_fj_batch_r1.jsonl
+[03:52:10]   B=1: PP=23.1 TG=1.04 t/s
+  B=4: PP=26.5 TG=4.09 t/s
+  B=8: PP=26.8 TG=7.24 t/s
+  B=16: PP=19.2 TG=10.08 t/s
+[03:52:10]   RUN: 8N FJ+TP8 batch -> llama3_8b_8n_fjtp_batch_r1.jsonl
+[03:54:51]   B=1: PP=40.0 TG=1.03 t/s
+  B=4: PP=80.0 TG=3.97 t/s
+  B=8: PP=81.1 TG=7.39 t/s
+  B=16: PP=79.8 TG=13.93 t/s
+[03:54:51]   RUN: 8N TaskInfer batch -> llama3_8b_8n_task_batch_r1.jsonl
+[03:57:09]   B=1: PP=37.5 TG=2.10 t/s
+  B=4: PP=51.4 TG=6.33 t/s
+  B=8: PP=51.0 TG=10.38 t/s
+  B=16: PP=47.2 TG=15.23 t/s
+[03:57:09] 
+[03:57:09] ############## REPEAT 2/3 ##############
+[03:57:09] 
+[03:57:09] ====== 1NUMA, 24 threads ======
+[03:57:09] 
+[03:57:09]   Model: qwen3_4b
+[03:57:09]   RUN: 1N FJ-Pure decode -> qwen3_4b_1n_fj_decode_r2.jsonl
+[03:57:38]   B=1: PP=44.9 TG=2.42 t/s
+[03:57:38]   RUN: 1N TaskInfer decode -> qwen3_4b_1n_task_decode_r2.jsonl
+[03:57:48]   B=1: PP=56.6 TG=8.52 t/s
+[03:57:48]   RUN: 1N FJ-Pure prefill -> qwen3_4b_1n_fj_prefill_r2.jsonl
+[03:58:10]   B=1: PP=57.8 TG=2.30 t/s
+  B=1: PP=46.9 TG=2.20 t/s
+  B=1: PP=46.4 TG=2.20 t/s
+[03:58:10]   RUN: 1N TaskInfer prefill -> qwen3_4b_1n_task_prefill_r2.jsonl
+[03:58:27]   B=1: PP=62.3 TG=8.56 t/s
+  B=1: PP=59.0 TG=8.55 t/s
+  B=1: PP=59.0 TG=8.40 t/s
+[03:58:27]   RUN: 1N FJ-Pure batch -> qwen3_4b_1n_fj_batch_r2.jsonl
+[04:00:13]   B=1: PP=46.6 TG=2.34 t/s
+  B=4: PP=46.0 TG=7.34 t/s
+  B=8: PP=46.4 TG=16.90 t/s
+  B=16: PP=45.8 TG=28.28 t/s
+[04:00:13]   RUN: 1N TaskInfer batch -> qwen3_4b_1n_task_batch_r2.jsonl
+[04:01:17]   B=1: PP=59.2 TG=8.29 t/s
+  B=4: PP=58.6 TG=25.81 t/s
+  B=8: PP=58.7 TG=34.36 t/s
+  B=16: PP=57.3 TG=37.61 t/s
+[04:01:17] 
+[04:01:17]   Model: llama3_8b
+[04:01:17]   RUN: 1N FJ-Pure decode -> llama3_8b_1n_fj_decode_r2.jsonl
+[04:01:48]   B=1: PP=43.5 TG=2.26 t/s
+[04:01:48]   RUN: 1N TaskInfer decode -> llama3_8b_1n_task_decode_r2.jsonl
+[04:02:51]   B=1: PP=29.5 TG=1.09 t/s
+[04:02:51]   RUN: 1N FJ-Pure prefill -> llama3_8b_1n_fj_prefill_r2.jsonl
+[04:03:13]   B=1: PP=47.6 TG=2.21 t/s
+  B=1: PP=50.1 TG=2.26 t/s
+  B=1: PP=49.3 TG=2.25 t/s
+[04:03:13]   RUN: 1N TaskInfer prefill -> llama3_8b_1n_task_prefill_r2.jsonl
+[04:03:44]   B=1: PP=34.1 TG=1.09 t/s
+  B=1: PP=32.9 TG=1.09 t/s
+  B=1: PP=34.7 TG=1.09 t/s
+[04:03:44]   RUN: 1N FJ-Pure batch -> llama3_8b_1n_fj_batch_r2.jsonl
+[04:05:35]   B=1: PP=40.2 TG=2.21 t/s
+  B=4: PP=45.1 TG=8.87 t/s
+  B=8: PP=44.5 TG=16.91 t/s
+  B=16: PP=40.8 TG=24.25 t/s
+[04:05:35]   RUN: 1N TaskInfer batch -> llama3_8b_1n_task_batch_r2.jsonl
+[04:08:37]   B=1: PP=29.8 TG=1.09 t/s
+  B=4: PP=36.1 TG=4.26 t/s
+  B=8: PP=36.5 TG=8.09 t/s
+  B=16: PP=34.5 TG=14.06 t/s
+[04:08:37] 
+[04:08:37] ====== 4NUMA, 96 threads, TP4 ======
+[04:08:37] 
+[04:08:37]   Model: qwen3_4b
+[04:08:37]   RUN: 4N FJ-Pure decode -> qwen3_4b_4n_fj_decode_r2.jsonl
+[04:10:10]   B=1: PP=18.9 TG=0.74 t/s
+[04:10:10]   RUN: 4N FJ+TP4 decode -> qwen3_4b_4n_fjtp_decode_r2.jsonl
+[04:10:44]   B=1: PP=64.0 TG=2.03 t/s
+[04:10:44]   RUN: 4N TaskInfer decode -> qwen3_4b_4n_task_decode_r2.jsonl
+[04:11:08]   B=1: PP=54.4 TG=3.27 t/s
+[04:11:08]   RUN: 4N FJ-Pure prefill -> qwen3_4b_4n_fj_prefill_r2.jsonl
+[04:11:52]   B=1: PP=20.6 TG=0.76 t/s
+  B=1: PP=24.7 TG=0.84 t/s
+  B=1: PP=24.6 TG=0.83 t/s
+[04:11:52]   RUN: 4N FJ+TP4 prefill -> qwen3_4b_4n_fjtp_prefill_r2.jsonl
+[04:12:05]   B=1: PP=81.3 TG=1.89 t/s
+  B=1: PP=99.6 TG=1.98 t/s
+  B=1: PP=98.8 TG=1.78 t/s
+[04:12:05]   RUN: 4N TaskInfer prefill -> qwen3_4b_4n_task_prefill_r2.jsonl
+[04:12:21]   B=1: PP=65.1 TG=3.20 t/s
+  B=1: PP=74.9 TG=3.19 t/s
+  B=1: PP=72.5 TG=3.13 t/s
+[04:12:21]   RUN: 4N FJ-Pure batch -> qwen3_4b_4n_fj_batch_r2.jsonl
+[04:16:36]   B=1: PP=18.5 TG=1.09 t/s
+  B=4: PP=24.8 TG=2.65 t/s
+  B=8: PP=24.9 TG=5.07 t/s
+  B=16: PP=24.4 TG=10.73 t/s
+[04:16:36]   RUN: 4N FJ+TP4 batch -> qwen3_4b_4n_fjtp_batch_r2.jsonl
+[04:18:10]   B=1: PP=64.8 TG=1.94 t/s
+  B=4: PP=96.6 TG=7.42 t/s
+  B=8: PP=96.7 TG=14.03 t/s
+  B=16: PP=93.9 TG=25.10 t/s
+[04:18:10]   RUN: 4N TaskInfer batch -> qwen3_4b_4n_task_batch_r2.jsonl
+[04:19:42]   B=1: PP=56.3 TG=3.28 t/s
+  B=4: PP=74.9 TG=10.22 t/s
+  B=8: PP=72.5 TG=16.45 t/s
+  B=16: PP=61.1 TG=22.84 t/s
+[04:19:42] 
+[04:19:42]   Model: llama3_8b
+[04:19:42]   RUN: 4N FJ-Pure decode -> llama3_8b_4n_fj_decode_r2.jsonl
+[04:20:28]   B=1: PP=33.1 TG=1.50 t/s
+[04:20:28]   RUN: 4N FJ+TP4 decode -> llama3_8b_4n_fjtp_decode_r2.jsonl
+[04:21:22]   B=1: PP=46.1 TG=1.28 t/s
+[04:21:22]   RUN: 4N TaskInfer decode -> llama3_8b_4n_task_decode_r2.jsonl
+[04:22:00]   B=1: PP=45.3 TG=2.03 t/s
+[04:22:00]   RUN: 4N FJ-Pure prefill -> llama3_8b_4n_fj_prefill_r2.jsonl
+[04:22:26]   B=1: PP=38.6 TG=1.49 t/s
+  B=1: PP=42.8 TG=1.46 t/s
+  B=1: PP=43.2 TG=1.41 t/s
+[04:22:26]   RUN: 4N FJ+TP4 prefill -> llama3_8b_4n_fjtp_prefill_r2.jsonl
+[04:22:43]   B=1: PP=61.2 TG=1.27 t/s
+  B=1: PP=72.6 TG=1.28 t/s
+  B=1: PP=72.7 TG=1.25 t/s
+[04:22:43]   RUN: 4N TaskInfer prefill -> llama3_8b_4n_task_prefill_r2.jsonl
+[04:23:04]   B=1: PP=55.3 TG=2.01 t/s
+  B=1: PP=63.4 TG=2.01 t/s
+  B=1: PP=65.8 TG=1.99 t/s
+[04:23:04]   RUN: 4N FJ-Pure batch -> llama3_8b_4n_fj_batch_r2.jsonl
+[04:25:38]   B=1: PP=33.1 TG=1.50 t/s
+  B=4: PP=41.1 TG=5.40 t/s
+  B=8: PP=41.6 TG=10.94 t/s
+  B=16: PP=32.5 TG=16.18 t/s
+[04:25:38]   RUN: 4N FJ+TP4 batch -> llama3_8b_4n_fjtp_batch_r2.jsonl
+[04:27:53]   B=1: PP=46.6 TG=1.27 t/s
+  B=4: PP=69.4 TG=4.97 t/s
+  B=8: PP=69.2 TG=9.70 t/s
+  B=16: PP=68.7 TG=17.99 t/s
+[04:27:53]   RUN: 4N TaskInfer batch -> llama3_8b_4n_task_batch_r2.jsonl
+[04:29:51]   B=1: PP=44.7 TG=2.03 t/s
+  B=4: PP=64.8 TG=6.88 t/s
+  B=8: PP=64.0 TG=12.14 t/s
+  B=16: PP=61.1 TG=19.26 t/s
+[04:29:51] 
+[04:29:51] ====== 8NUMA, 192 threads, TP8 ======
+[04:29:51] 
+[04:29:51]   Model: qwen3_4b
+[04:29:51]   RUN: 8N FJ-Pure decode -> qwen3_4b_8n_fj_decode_r2.jsonl
+[04:31:22]   B=1: PP=17.9 TG=0.75 t/s
+[04:31:22]   RUN: 8N FJ+TP8 decode -> qwen3_4b_8n_fjtp_decode_r2.jsonl
+[04:32:39]   B=1: PP=37.8 TG=0.88 t/s
+[04:32:39]   RUN: 8N TaskInfer decode -> qwen3_4b_8n_task_decode_r2.jsonl
+[04:33:09]   B=1: PP=43.6 TG=2.61 t/s
+[04:33:09]   RUN: 8N FJ-Pure prefill -> qwen3_4b_8n_fj_prefill_r2.jsonl
+[04:34:18]   B=1: PP=15.2 TG=0.61 t/s
+  B=1: PP=14.6 TG=0.62 t/s
+  B=1: PP=14.6 TG=0.58 t/s
+[04:34:18]   RUN: 8N FJ+TP8 prefill -> qwen3_4b_8n_fjtp_prefill_r2.jsonl
+[04:34:36]   B=1: PP=61.2 TG=0.93 t/s
+  B=1: PP=80.2 TG=0.79 t/s
+  B=1: PP=81.1 TG=0.90 t/s
+[04:34:36]   RUN: 8N TaskInfer prefill -> qwen3_4b_8n_task_prefill_r2.jsonl
+[04:35:00]   B=1: PP=47.5 TG=2.60 t/s
+  B=1: PP=48.1 TG=2.52 t/s
+  B=1: PP=46.6 TG=2.45 t/s
+[04:35:00]   RUN: 8N FJ-Pure batch -> qwen3_4b_8n_fj_batch_r2.jsonl
+[04:42:17]   B=1: PP=15.8 TG=0.62 t/s
+  B=4: PP=14.8 TG=1.62 t/s
+  B=8: PP=13.8 TG=2.84 t/s
+  B=16: PP=14.2 TG=6.15 t/s
+[04:42:17]   RUN: 8N FJ+TP8 batch -> qwen3_4b_8n_fjtp_batch_r2.jsonl
+[04:45:36]   B=1: PP=37.1 TG=0.83 t/s
+  B=4: PP=74.6 TG=2.95 t/s
+  B=8: PP=75.3 TG=5.99 t/s
+  B=16: PP=74.0 TG=11.30 t/s
+[04:45:36]   RUN: 8N TaskInfer batch -> qwen3_4b_8n_task_batch_r2.jsonl
+[04:47:53]   B=1: PP=42.9 TG=2.43 t/s
+  B=4: PP=46.6 TG=7.10 t/s
+  B=8: PP=45.2 TG=11.31 t/s
+  B=16: PP=36.1 TG=15.65 t/s
+[04:47:53] 
+[04:47:53]   Model: llama3_8b
+[04:47:53]   RUN: 8N FJ-Pure decode -> llama3_8b_8n_fj_decode_r2.jsonl
+[04:49:14]   B=1: PP=21.3 TG=0.84 t/s
+[04:49:14]   RUN: 8N FJ+TP8 decode -> llama3_8b_8n_fjtp_decode_r2.jsonl
+[04:50:30]   B=1: PP=38.2 TG=0.90 t/s
+[04:50:30]   RUN: 8N TaskInfer decode -> llama3_8b_8n_task_decode_r2.jsonl
+[04:51:08]   B=1: PP=37.1 TG=2.10 t/s
+[04:51:08]   RUN: 8N FJ-Pure prefill -> llama3_8b_8n_fj_prefill_r2.jsonl
+[04:51:50]   B=1: PP=22.5 TG=1.03 t/s
+  B=1: PP=24.3 TG=1.01 t/s
+  B=1: PP=24.6 TG=0.99 t/s
+[04:51:50]   RUN: 8N FJ+TP8 prefill -> llama3_8b_8n_fjtp_prefill_r2.jsonl
+[04:52:08]   B=1: PP=57.3 TG=0.90 t/s
+  B=1: PP=77.0 TG=0.95 t/s
+  B=1: PP=75.2 TG=0.95 t/s
+[04:52:08]   RUN: 8N TaskInfer prefill -> llama3_8b_8n_task_prefill_r2.jsonl
+[04:52:34]   B=1: PP=41.7 TG=2.04 t/s
+  B=1: PP=49.9 TG=2.10 t/s
+  B=1: PP=50.8 TG=1.96 t/s
+[04:52:34]   RUN: 8N FJ-Pure batch -> llama3_8b_8n_fj_batch_r2.jsonl
+[04:56:40]   B=1: PP=21.4 TG=1.01 t/s
+  B=4: PP=25.2 TG=3.81 t/s
+  B=8: PP=25.6 TG=6.73 t/s
+  B=16: PP=18.9 TG=9.61 t/s
+[04:56:40]   RUN: 8N FJ+TP8 batch -> llama3_8b_8n_fjtp_batch_r2.jsonl
+[04:59:34]   B=1: PP=38.3 TG=0.94 t/s
+  B=4: PP=77.1 TG=3.64 t/s
+  B=8: PP=78.4 TG=6.78 t/s
+  B=16: PP=75.8 TG=12.83 t/s
+[04:59:34]   RUN: 8N TaskInfer batch -> llama3_8b_8n_task_batch_r2.jsonl
+[05:01:53]   B=1: PP=37.7 TG=2.10 t/s
+  B=4: PP=51.3 TG=6.33 t/s
+  B=8: PP=50.6 TG=10.37 t/s
+  B=16: PP=47.3 TG=15.22 t/s
+[05:01:53] 
+[05:01:53] ############## REPEAT 3/3 ##############
+[05:01:53] 
+[05:01:53] ====== 1NUMA, 24 threads ======
+[05:01:53] 
+[05:01:53]   Model: qwen3_4b
+[05:01:53]   RUN: 1N FJ-Pure decode -> qwen3_4b_1n_fj_decode_r3.jsonl
+[05:02:22]   B=1: PP=44.9 TG=2.46 t/s
+[05:02:22]   RUN: 1N TaskInfer decode -> qwen3_4b_1n_task_decode_r3.jsonl
+[05:02:32]   B=1: PP=57.0 TG=8.48 t/s
+[05:02:32]   RUN: 1N FJ-Pure prefill -> qwen3_4b_1n_fj_prefill_r3.jsonl
+[05:02:53]   B=1: PP=59.3 TG=2.24 t/s
+  B=1: PP=46.8 TG=2.18 t/s
+  B=1: PP=46.3 TG=2.18 t/s
+[05:02:53]   RUN: 1N TaskInfer prefill -> qwen3_4b_1n_task_prefill_r3.jsonl
+[05:03:10]   B=1: PP=62.0 TG=8.56 t/s
+  B=1: PP=58.5 TG=8.13 t/s
+  B=1: PP=58.8 TG=8.42 t/s
+[05:03:10]   RUN: 1N FJ-Pure batch -> qwen3_4b_1n_fj_batch_r3.jsonl
+[05:04:57]   B=1: PP=47.0 TG=2.32 t/s
+  B=4: PP=47.2 TG=7.21 t/s
+  B=8: PP=46.6 TG=16.81 t/s
+  B=16: PP=45.5 TG=28.32 t/s
+[05:04:57]   RUN: 1N TaskInfer batch -> qwen3_4b_1n_task_batch_r3.jsonl
+[05:06:00]   B=1: PP=59.4 TG=8.33 t/s
+  B=4: PP=58.3 TG=25.63 t/s
+  B=8: PP=59.0 TG=34.25 t/s
+  B=16: PP=57.5 TG=37.68 t/s
+[05:06:00] 
+[05:06:00]   Model: llama3_8b
+[05:06:00]   RUN: 1N FJ-Pure decode -> llama3_8b_1n_fj_decode_r3.jsonl
+[05:06:32]   B=1: PP=43.9 TG=2.27 t/s
+[05:06:32]   RUN: 1N TaskInfer decode -> llama3_8b_1n_task_decode_r3.jsonl
+[05:07:35]   B=1: PP=29.5 TG=1.09 t/s
+[05:07:35]   RUN: 1N FJ-Pure prefill -> llama3_8b_1n_fj_prefill_r3.jsonl
+[05:07:56]   B=1: PP=48.3 TG=2.26 t/s
+  B=1: PP=50.5 TG=2.24 t/s
+  B=1: PP=50.1 TG=2.24 t/s
+[05:07:56]   RUN: 1N TaskInfer prefill -> llama3_8b_1n_task_prefill_r3.jsonl
+[05:08:27]   B=1: PP=34.2 TG=1.10 t/s
+  B=1: PP=32.9 TG=1.10 t/s
+  B=1: PP=34.8 TG=1.09 t/s
+[05:08:27]   RUN: 1N FJ-Pure batch -> llama3_8b_1n_fj_batch_r3.jsonl
+[05:10:17]   B=1: PP=40.3 TG=2.25 t/s
+  B=4: PP=45.1 TG=8.86 t/s
+  B=8: PP=45.5 TG=16.87 t/s
+  B=16: PP=41.4 TG=24.35 t/s
+[05:10:17]   RUN: 1N TaskInfer batch -> llama3_8b_1n_task_batch_r3.jsonl
+[05:13:19]   B=1: PP=29.8 TG=1.09 t/s
+  B=4: PP=36.1 TG=4.27 t/s
+  B=8: PP=36.6 TG=8.08 t/s
+  B=16: PP=34.6 TG=14.13 t/s
+[05:13:19] 
+[05:13:19] ====== 4NUMA, 96 threads, TP4 ======
+[05:13:19] 
+[05:13:19]   Model: qwen3_4b
+[05:13:19]   RUN: 4N FJ-Pure decode -> qwen3_4b_4n_fj_decode_r3.jsonl
+[05:15:02]   B=1: PP=17.7 TG=0.66 t/s
+[05:15:02]   RUN: 4N FJ+TP4 decode -> qwen3_4b_4n_fjtp_decode_r3.jsonl
+[05:15:40]   B=1: PP=61.9 TG=1.81 t/s
+[05:15:40]   RUN: 4N TaskInfer decode -> qwen3_4b_4n_task_decode_r3.jsonl
+[05:16:04]   B=1: PP=56.2 TG=3.29 t/s
+[05:16:04]   RUN: 4N FJ-Pure prefill -> qwen3_4b_4n_fj_prefill_r3.jsonl
+[05:16:49]   B=1: PP=19.9 TG=0.90 t/s
+  B=1: PP=23.6 TG=0.87 t/s
+  B=1: PP=23.8 TG=0.79 t/s
+[05:16:49]   RUN: 4N FJ+TP4 prefill -> qwen3_4b_4n_fjtp_prefill_r3.jsonl
+[05:17:02]   B=1: PP=74.3 TG=1.88 t/s
+  B=1: PP=95.2 TG=1.92 t/s
+  B=1: PP=94.2 TG=1.65 t/s
+[05:17:02]   RUN: 4N TaskInfer prefill -> qwen3_4b_4n_task_prefill_r3.jsonl
+[05:17:19]   B=1: PP=64.8 TG=3.22 t/s
+  B=1: PP=73.5 TG=3.18 t/s
+  B=1: PP=72.1 TG=3.17 t/s
+[05:17:19]   RUN: 4N FJ-Pure batch -> qwen3_4b_4n_fj_batch_r3.jsonl
+[05:21:45]   B=1: PP=17.4 TG=0.99 t/s
+  B=4: PP=24.3 TG=2.63 t/s
+  B=8: PP=24.2 TG=5.04 t/s
+  B=16: PP=23.9 TG=9.58 t/s
+[05:21:45]   RUN: 4N FJ+TP4 batch -> qwen3_4b_4n_fjtp_batch_r3.jsonl
+[05:23:25]   B=1: PP=61.8 TG=1.74 t/s
+  B=4: PP=90.8 TG=6.82 t/s
+  B=8: PP=91.7 TG=13.15 t/s
+  B=16: PP=89.7 TG=23.62 t/s
+[05:23:25]   RUN: 4N TaskInfer batch -> qwen3_4b_4n_task_batch_r3.jsonl
+[05:24:58]   B=1: PP=54.2 TG=3.27 t/s
+  B=4: PP=72.4 TG=10.17 t/s
+  B=8: PP=73.3 TG=16.30 t/s
+  B=16: PP=60.0 TG=22.81 t/s
+[05:24:58] 
+[05:24:58]   Model: llama3_8b
+[05:24:58]   RUN: 4N FJ-Pure decode -> llama3_8b_4n_fj_decode_r3.jsonl
+[05:25:45]   B=1: PP=30.3 TG=1.50 t/s
+[05:25:45]   RUN: 4N FJ+TP4 decode -> llama3_8b_4n_fjtp_decode_r3.jsonl
+[05:26:43]   B=1: PP=43.7 TG=1.18 t/s
+[05:26:43]   RUN: 4N TaskInfer decode -> llama3_8b_4n_task_decode_r3.jsonl
+[05:27:21]   B=1: PP=46.0 TG=2.03 t/s
+[05:27:21]   RUN: 4N FJ-Pure prefill -> llama3_8b_4n_fj_prefill_r3.jsonl
+[05:27:47]   B=1: PP=36.5 TG=1.49 t/s
+  B=1: PP=41.2 TG=1.41 t/s
+  B=1: PP=41.4 TG=1.37 t/s
+[05:27:47]   RUN: 4N FJ+TP4 prefill -> llama3_8b_4n_fjtp_prefill_r3.jsonl
+[05:28:05]   B=1: PP=59.7 TG=1.20 t/s
+  B=1: PP=71.0 TG=1.17 t/s
+  B=1: PP=70.9 TG=1.15 t/s
+[05:28:05]   RUN: 4N TaskInfer prefill -> llama3_8b_4n_task_prefill_r3.jsonl
+[05:28:26]   B=1: PP=54.5 TG=2.01 t/s
+  B=1: PP=65.3 TG=2.00 t/s
+  B=1: PP=65.1 TG=1.98 t/s
+[05:28:26]   RUN: 4N FJ-Pure batch -> llama3_8b_4n_fj_batch_r3.jsonl
+[05:31:12]   B=1: PP=30.5 TG=1.40 t/s
+  B=4: PP=39.0 TG=5.05 t/s
+  B=8: PP=39.5 TG=9.89 t/s
+  B=16: PP=31.2 TG=14.47 t/s
+[05:31:12]   RUN: 4N FJ+TP4 batch -> llama3_8b_4n_fjtp_batch_r3.jsonl
+[05:33:36]   B=1: PP=43.0 TG=1.18 t/s
+  B=4: PP=69.1 TG=4.60 t/s
+  B=8: PP=69.4 TG=9.08 t/s
+  B=16: PP=68.2 TG=16.75 t/s
+[05:33:36]   RUN: 4N TaskInfer batch -> llama3_8b_4n_task_batch_r3.jsonl
+[05:35:33]   B=1: PP=45.8 TG=2.04 t/s
+  B=4: PP=63.4 TG=6.87 t/s
+  B=8: PP=64.7 TG=12.14 t/s
+  B=16: PP=61.9 TG=19.26 t/s
+[05:35:33] 
+[05:35:33] ====== 8NUMA, 192 threads, TP8 ======
+[05:35:33] 
+[05:35:33]   Model: qwen3_4b
+[05:35:33]   RUN: 8N FJ-Pure decode -> qwen3_4b_8n_fj_decode_r3.jsonl
+[05:37:07]   B=1: PP=16.5 TG=0.74 t/s
+[05:37:07]   RUN: 8N FJ+TP8 decode -> qwen3_4b_8n_fjtp_decode_r3.jsonl
+[05:38:37]   B=1: PP=32.5 TG=0.75 t/s
+[05:38:37]   RUN: 8N TaskInfer decode -> qwen3_4b_8n_task_decode_r3.jsonl
+[05:39:12]   B=1: PP=43.4 TG=2.13 t/s
+[05:39:12]   RUN: 8N FJ-Pure prefill -> qwen3_4b_8n_fj_prefill_r3.jsonl
+[05:40:23]   B=1: PP=14.7 TG=0.61 t/s
+  B=1: PP=14.3 TG=0.59 t/s
+  B=1: PP=14.4 TG=0.51 t/s
+[05:40:23]   RUN: 8N FJ+TP8 prefill -> qwen3_4b_8n_fjtp_prefill_r3.jsonl
+[05:40:42]   B=1: PP=56.1 TG=0.77 t/s
+  B=1: PP=73.9 TG=0.69 t/s
+  B=1: PP=73.8 TG=0.78 t/s
+[05:40:42]   RUN: 8N TaskInfer prefill -> qwen3_4b_8n_task_prefill_r3.jsonl
+[05:41:06]   B=1: PP=49.0 TG=2.13 t/s
+  B=1: PP=48.5 TG=2.05 t/s
+  B=1: PP=45.3 TG=2.01 t/s
+[05:41:06]   RUN: 8N FJ-Pure batch -> qwen3_4b_8n_fj_batch_r3.jsonl
+[05:48:27]   B=1: PP=14.6 TG=0.70 t/s
+  B=4: PP=14.5 TG=1.57 t/s
+  B=8: PP=14.5 TG=2.81 t/s
+  B=16: PP=14.1 TG=5.72 t/s
+[05:48:27]   RUN: 8N FJ+TP8 batch -> qwen3_4b_8n_fjtp_batch_r3.jsonl
+[05:52:09]   B=1: PP=33.1 TG=0.73 t/s
+  B=4: PP=69.4 TG=2.63 t/s
+  B=8: PP=69.8 TG=5.24 t/s
+  B=16: PP=69.0 TG=10.16 t/s
+[05:52:09]   RUN: 8N TaskInfer batch -> qwen3_4b_8n_task_batch_r3.jsonl
+[05:54:39]   B=1: PP=42.1 TG=1.96 t/s
+  B=4: PP=46.2 TG=5.95 t/s
+  B=8: PP=45.8 TG=9.95 t/s
+  B=16: PP=35.1 TG=14.48 t/s
+[05:54:39] 
+[05:54:39]   Model: llama3_8b
+[05:54:39]   RUN: 8N FJ-Pure decode -> llama3_8b_8n_fj_decode_r3.jsonl
+[05:56:03]   B=1: PP=20.0 TG=0.82 t/s
+[05:56:03]   RUN: 8N FJ+TP8 decode -> llama3_8b_8n_fjtp_decode_r3.jsonl
+[05:57:24]   B=1: PP=37.2 TG=0.83 t/s
+[05:57:24]   RUN: 8N TaskInfer decode -> llama3_8b_8n_task_decode_r3.jsonl
+[05:58:02]   B=1: PP=37.6 TG=2.09 t/s
+[05:58:02]   RUN: 8N FJ-Pure prefill -> llama3_8b_8n_fj_prefill_r3.jsonl
+[05:58:44]   B=1: PP=22.1 TG=0.85 t/s
+  B=1: PP=24.8 TG=0.85 t/s
+  B=1: PP=24.9 TG=0.84 t/s
+[05:58:44]   RUN: 8N FJ+TP8 prefill -> llama3_8b_8n_fjtp_prefill_r3.jsonl
+[05:59:03]   B=1: PP=57.6 TG=0.81 t/s
+  B=1: PP=75.4 TG=0.87 t/s
+  B=1: PP=74.1 TG=0.87 t/s
+[05:59:03]   RUN: 8N TaskInfer prefill -> llama3_8b_8n_task_prefill_r3.jsonl
+[05:59:28]   B=1: PP=42.1 TG=2.10 t/s
+  B=1: PP=50.8 TG=2.00 t/s
+  B=1: PP=51.3 TG=2.05 t/s
+[05:59:28]   RUN: 8N FJ-Pure batch -> llama3_8b_8n_fj_batch_r3.jsonl
+[06:03:57]   B=1: PP=20.3 TG=0.86 t/s
+  B=4: PP=24.5 TG=3.18 t/s
+  B=8: PP=25.0 TG=6.04 t/s
+  B=16: PP=18.5 TG=8.91 t/s
+[06:03:57]   RUN: 8N FJ+TP8 batch -> llama3_8b_8n_fjtp_batch_r3.jsonl
+[06:07:06]   B=1: PP=35.9 TG=0.84 t/s
+  B=4: PP=74.5 TG=3.36 t/s
+  B=8: PP=74.7 TG=6.25 t/s
+  B=16: PP=72.5 TG=11.88 t/s
+[06:07:06]   RUN: 8N TaskInfer batch -> llama3_8b_8n_task_batch_r3.jsonl
+[06:09:25]   B=1: PP=36.9 TG=2.10 t/s
+  B=4: PP=50.9 TG=6.25 t/s
+  B=8: PP=49.8 TG=10.28 t/s
+  B=16: PP=47.2 TG=15.05 t/s
+[06:09:25] 
+[06:09:25] ==========================================
+[06:09:25] ALL EXPERIMENTS COMPLETE: Mon Apr  6 06:09:25 AM UTC 2026
+[06:09:25] Results in: /home/haibin/tp/exp1_results/raw/
+[06:09:25] ==========================================

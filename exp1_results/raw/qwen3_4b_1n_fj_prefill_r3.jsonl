@@ -1,0 +1,156 @@
+build: 62 (f56d77b) with cc (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0 for x86_64-linux-gnu
+/proc/sys/kernel/numa_balancing is enabled, this has been observed to impair performance
+llama_model_loader: loaded meta data with 38 key-value pairs and 398 tensors from /home/haibin/model/Qwen3-4B-Ins-2507-f16.gguf (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = qwen3
+llama_model_loader: - kv   1:                               general.type str              = model
+llama_model_loader: - kv   2:                               general.name str              = Qwen3-4B-Instruct-2507
+llama_model_loader: - kv   3:                            general.version str              = 2507
+llama_model_loader: - kv   4:                           general.finetune str              = Instruct
+llama_model_loader: - kv   5:                           general.basename str              = Qwen3-4B-Instruct-2507
+llama_model_loader: - kv   6:                       general.quantized_by str              = Unsloth
+llama_model_loader: - kv   7:                         general.size_label str              = 4B
+llama_model_loader: - kv   8:                            general.license str              = apache-2.0
+llama_model_loader: - kv   9:                       general.license.link str              = https://huggingface.co/Qwen/Qwen3-4B-...
+llama_model_loader: - kv  10:                           general.repo_url str              = https://huggingface.co/unsloth
+llama_model_loader: - kv  11:                   general.base_model.count u32              = 1
+llama_model_loader: - kv  12:                  general.base_model.0.name str              = Qwen3 4B Instruct 2507
+llama_model_loader: - kv  13:               general.base_model.0.version str              = 2507
+llama_model_loader: - kv  14:          general.base_model.0.organization str              = Qwen
+llama_model_loader: - kv  15:              general.base_model.0.repo_url str              = https://huggingface.co/Qwen/Qwen3-4B-...
+llama_model_loader: - kv  16:                               general.tags arr[str,2]       = ["unsloth", "text-generation"]
+llama_model_loader: - kv  17:                          qwen3.block_count u32              = 36
+llama_model_loader: - kv  18:                       qwen3.context_length u32              = 262144
+llama_model_loader: - kv  19:                     qwen3.embedding_length u32              = 2560
+llama_model_loader: - kv  20:                  qwen3.feed_forward_length u32              = 9728
+llama_model_loader: - kv  21:                 qwen3.attention.head_count u32              = 32
+llama_model_loader: - kv  22:              qwen3.attention.head_count_kv u32              = 8
+llama_model_loader: - kv  23:                       qwen3.rope.freq_base f32              = 5000000.000000
+llama_model_loader: - kv  24:     qwen3.attention.layer_norm_rms_epsilon f32              = 0.000001
+llama_model_loader: - kv  25:                 qwen3.attention.key_length u32              = 128
+llama_model_loader: - kv  26:               qwen3.attention.value_length u32              = 128
+llama_model_loader: - kv  27:                          general.file_type u32              = 1
+llama_model_loader: - kv  28:               general.quantization_version u32              = 2
+llama_model_loader: - kv  29:                       tokenizer.ggml.model str              = gpt2
+llama_model_loader: - kv  30:                         tokenizer.ggml.pre str              = qwen2
+llama_model_loader: - kv  31:                      tokenizer.ggml.tokens arr[str,151936]  = ["!", "\"", "#", "$", "%", "&", "'", ...
+llama_model_loader: - kv  32:                  tokenizer.ggml.token_type arr[i32,151936]  = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+llama_model_loader: - kv  33:                      tokenizer.ggml.merges arr[str,151387]  = ["Ġ Ġ", "ĠĠ ĠĠ", "i n", "Ġ t",...
+llama_model_loader: - kv  34:                tokenizer.ggml.eos_token_id u32              = 151645
+llama_model_loader: - kv  35:            tokenizer.ggml.padding_token_id u32              = 151654
+llama_model_loader: - kv  36:               tokenizer.ggml.add_bos_token bool             = false
+llama_model_loader: - kv  37:                    tokenizer.chat_template str              = {%- if tools %}\n    {{- '<|im_start|>...
+llama_model_loader: - type  f32:  145 tensors
+llama_model_loader: - type  f16:  253 tensors
+print_info: file format = GGUF V3 (latest)
+print_info: file type   = F16
+print_info: file size   = 7.49 GiB (16.00 BPW) 
+load: special tokens cache size = 26
+load: token to piece cache size = 0.9311 MB
+print_info: arch             = qwen3
+print_info: vocab_only       = 0
+print_info: n_ctx_train      = 262144
+print_info: n_embd           = 2560
+print_info: n_layer          = 36
+print_info: n_head           = 32
+print_info: n_head_kv        = 8
+print_info: n_rot            = 128
+print_info: n_swa            = 0
+print_info: is_swa_any       = 0
+print_info: n_embd_head_k    = 128
+print_info: n_embd_head_v    = 128
+print_info: n_gqa            = 4
+print_info: n_embd_k_gqa     = 1024
+print_info: n_embd_v_gqa     = 1024
+print_info: f_norm_eps       = 0.0e+00
+print_info: f_norm_rms_eps   = 1.0e-06
+print_info: f_clamp_kqv      = 0.0e+00
+print_info: f_max_alibi_bias = 0.0e+00
+print_info: f_logit_scale    = 0.0e+00
+print_info: f_attn_scale     = 0.0e+00
+print_info: n_ff             = 9728
+print_info: n_expert         = 0
+print_info: n_expert_used    = 0
+print_info: causal attn      = 1
+print_info: pooling type     = 0
+print_info: rope type        = 2
+print_info: rope scaling     = linear
+print_info: freq_base_train  = 5000000.0
+print_info: freq_scale_train = 1
+print_info: n_ctx_orig_yarn  = 262144
+print_info: rope_finetuned   = unknown
+print_info: ssm_d_conv       = 0
+print_info: ssm_d_inner      = 0
+print_info: ssm_d_state      = 0
+print_info: ssm_dt_rank      = 0
+print_info: ssm_dt_b_c_rms   = 0
+print_info: model type       = 4B
+print_info: model params     = 4.02 B
+print_info: general.name     = Qwen3-4B-Instruct-2507
+print_info: vocab type       = BPE
+print_info: n_vocab          = 151936
+print_info: n_merges         = 151387
+print_info: BOS token        = 11 ','
+print_info: EOS token        = 151645 '<|im_end|>'
+print_info: EOT token        = 151645 '<|im_end|>'
+print_info: PAD token        = 151654 '<|vision_pad|>'
+print_info: LF token         = 198 'Ċ'
+print_info: FIM PRE token    = 151659 '<|fim_prefix|>'
+print_info: FIM SUF token    = 151661 '<|fim_suffix|>'
+print_info: FIM MID token    = 151660 '<|fim_middle|>'
+print_info: FIM PAD token    = 151662 '<|fim_pad|>'
+print_info: FIM REP token    = 151663 '<|repo_name|>'
+print_info: FIM SEP token    = 151664 '<|file_sep|>'
+print_info: EOG token        = 151643 '<|endoftext|>'
+print_info: EOG token        = 151645 '<|im_end|>'
+print_info: EOG token        = 151662 '<|fim_pad|>'
+print_info: EOG token        = 151663 '<|repo_name|>'
+print_info: EOG token        = 151664 '<|file_sep|>'
+print_info: max token length = 256
+load_tensors: loading model tensors, this can take a while... (mmap = true)
+load_tensors:   CPU_Mapped model buffer size =  7672.62 MiB
+............................................................................................
+llama_context: constructing llama_context
+llama_context: n_seq_max     = 1
+llama_context: n_ctx         = 4096
+llama_context: n_ctx_per_seq = 4096
+llama_context: n_batch       = 512
+llama_context: n_ubatch      = 256
+llama_context: causal_attn   = 1
+llama_context: flash_attn    = 0
+llama_context: freq_base     = 5000000.0
+llama_context: freq_scale    = 1
+llama_context: n_ctx_per_seq (4096) < n_ctx_train (262144) -- the full capacity of the model will not be utilized
+llama_context:        CPU  output buffer size =     0.58 MiB
+llama_kv_cache_unified:        CPU KV buffer size =   576.00 MiB
+llama_kv_cache_unified: size =  576.00 MiB (  4096 cells,  36 layers,  1 seqs), K (f16):  288.00 MiB, V (f16):  288.00 MiB
+llama_context:        CPU compute buffer size =   150.88 MiB
+llama_context: graph nodes  = 1446
+llama_context: graph splits = 1
+GGML_PERF_ALL|nth=24|graph_us=506017.1|avg_compute_us=373575.6|avg_barrier_us=130300.0|avg_idle_us=2141.5|t0_compute_us=237739.6|t0_barrier_us=267865.5|t0_idle_us=412.1|max_compute_us=436805.9|min_compute_us=228932.6
+GGML_PERF_THREADS|nth=24|t0=237739.6|t1=401859.4|t2=350059.9|t3=380239.5|t4=383418.3|t5=436805.9|t6=373711.6|t7=380541.9|t8=231158.5|t9=373499.9|t10=400732.1|t11=384944.7|t12=412159.7|t13=394011.7|t14=402070.3|t15=419062.3|t16=228932.6|t17=400407.0|t18=390921.6|t19=391661.4|t20=393300.0|t21=417217.1|t22=399864.5|t23=381495.5
+GGML_PERF_ALL|nth=24|graph_us=2157843.8|avg_compute_us=1904733.2|avg_barrier_us=247810.7|avg_idle_us=5299.9|t0_compute_us=1525090.0|t0_barrier_us=621562.9|t0_idle_us=11190.9|max_compute_us=2037284.3|min_compute_us=1486315.0
+GGML_PERF_THREADS|nth=24|t0=1525090.0|t1=1974334.3|t2=1890989.0|t3=2006426.5|t4=1972698.2|t5=2037284.3|t6=1958348.3|t7=1977079.3|t8=1489463.4|t9=1955663.3|t10=1931972.4|t11=2002734.6|t12=1959374.6|t13=2019760.1|t14=1960396.1|t15=1969165.0|t16=1486315.0|t17=1951709.2|t18=1893624.8|t19=2011514.1|t20=1931361.7|t21=1987929.0|t22=1934654.6|t23=1885708.6
+GGML_PERF_ALL|nth=24|graph_us=445563.7|avg_compute_us=346144.6|avg_barrier_us=93266.9|avg_idle_us=6152.2|t0_compute_us=211515.7|t0_barrier_us=220206.1|t0_idle_us=13841.8|max_compute_us=409074.9|min_compute_us=208596.3
+GGML_PERF_THREADS|nth=24|t0=211515.7|t1=389735.4|t2=332881.1|t3=387015.8|t4=340908.7|t5=407752.0|t6=340088.7|t7=354781.9|t8=208596.3|t9=391324.1|t10=340732.6|t11=398403.6|t12=344431.5|t13=409074.9|t14=341726.2|t15=351270.5|t16=208644.7|t17=393350.6|t18=341922.1|t19=397348.1|t20=336794.0|t21=406241.2|t22=334364.9|t23=338566.7
+{"n_kv_max": 4096, "n_batch": 512, "n_ubatch": 256, "flash_attn": 0, "is_pp_shared": 0, "n_gpu_layers": -1, "n_threads": 24, "n_threads_batch": 24, "pp": 128, "tg": 1, "pl": 1, "n_kv": 129, "t_pp": 2.159395, "speed_pp": 59.275864, "t_tg": 0.447195, "speed_tg": 2.236161, "t": 2.606590, "speed": 49.489944}
+GGML_PERF_ALL|nth=24|graph_us=5468126.5|avg_compute_us=4994811.4|avg_barrier_us=467030.3|avg_idle_us=6284.8|t0_compute_us=4006372.3|t0_barrier_us=1447858.6|t0_idle_us=13895.6|max_compute_us=5240150.4|min_compute_us=3909368.9
+GGML_PERF_THREADS|nth=24|t0=4006372.3|t1=5157382.8|t2=5095698.2|t3=5180003.8|t4=5217180.3|t5=5240150.4|t6=5175991.5|t7=5146075.3|t8=3909368.9|t9=5142556.6|t10=5090328.2|t11=5178378.9|t12=5142645.2|t13=5233826.1|t14=5127924.5|t15=5124171.0|t16=3928077.5|t17=5138563.2|t18=5075489.0|t19=5176655.0|t20=5113661.7|t21=5192936.5|t22=5122648.6|t23=4959387.7
+GGML_PERF_ALL|nth=24|graph_us=457729.0|avg_compute_us=356283.2|avg_barrier_us=95268.8|avg_idle_us=6177.0|t0_compute_us=219596.4|t0_barrier_us=224191.5|t0_idle_us=13941.2|max_compute_us=415637.2|min_compute_us=216207.7
+GGML_PERF_THREADS|nth=24|t0=219596.4|t1=404248.7|t2=342496.6|t3=396487.0|t4=361477.4|t5=413817.5|t6=350299.6|t7=365989.1|t8=216207.7|t9=406324.9|t10=344741.4|t11=403186.5|t12=364518.6|t13=415637.2|t14=347560.4|t15=371183.9|t16=216394.6|t17=405246.1|t18=345977.4|t19=403905.4|t20=357705.9|t21=404656.4|t22=344651.7|t23=348487.1
+{"n_kv_max": 4096, "n_batch": 512, "n_ubatch": 256, "flash_attn": 0, "is_pp_shared": 0, "n_gpu_layers": -1, "n_threads": 24, "n_threads_batch": 24, "pp": 256, "tg": 1, "pl": 1, "n_kv": 257, "t_pp": 5.470267, "speed_pp": 46.798447, "t_tg": 0.459173, "speed_tg": 2.177828, "t": 5.929440, "speed": 43.343048}
+GGML_PERF_ALL|nth=24|graph_us=5431797.3|avg_compute_us=4949385.0|avg_barrier_us=480778.7|avg_idle_us=1633.6|t0_compute_us=3970923.6|t0_barrier_us=1460459.2|t0_idle_us=414.6|max_compute_us=5202089.8|min_compute_us=3866839.4
+GGML_PERF_THREADS|nth=24|t0=3970923.6|t1=5086819.5|t2=5017908.5|t3=5131310.7|t4=5163649.9|t5=5202089.8|t6=5127567.1|t7=5092595.9|t8=3866839.4|t9=5104361.3|t10=5035130.3|t11=5127249.7|t12=5121604.6|t13=5178214.4|t14=5092511.7|t15=5073913.8|t16=3885667.4|t17=5096322.5|t18=5030105.2|t19=5121482.4|t20=5087704.3|t21=5161037.2|t22=5085021.4|t23=4925208.5
+GGML_PERF_ALL|nth=24|graph_us=5629042.3|avg_compute_us=5114362.0|avg_barrier_us=508350.7|avg_idle_us=6329.6|t0_compute_us=4162450.1|t0_barrier_us=1452608.7|t0_idle_us=13983.5|max_compute_us=5376143.4|min_compute_us=4061918.8
+GGML_PERF_THREADS|nth=24|t0=4162450.1|t1=5240364.2|t2=5192197.7|t3=5307266.9|t4=5376143.4|t5=5367314.5|t6=5290526.5|t7=5227980.7|t8=4061918.8|t9=5252749.4|t10=5212280.5|t11=5295693.9|t12=5309775.4|t13=5332205.0|t14=5234367.3|t15=5213758.6|t16=4085002.2|t17=5224365.6|t18=5164264.4|t19=5305147.3|t20=5283989.2|t21=5295043.5|t22=5236485.7|t23=5073397.3
+GGML_PERF_ALL|nth=24|graph_us=457831.9|avg_compute_us=354693.5|avg_barrier_us=96827.1|avg_idle_us=6311.3|t0_compute_us=216980.8|t0_barrier_us=226904.6|t0_idle_us=13946.5|max_compute_us=411833.5|min_compute_us=213635.8
+GGML_PERF_THREADS|nth=24|t0=216980.8|t1=403226.9|t2=344999.3|t3=402045.0|t4=351272.0|t5=411275.6|t6=355430.6|t7=362589.1|t8=213722.4|t9=403627.7|t10=349035.7|t11=404272.5|t12=355709.8|t13=411833.5|t14=354571.3|t15=360869.0|t16=213635.8|t17=402407.1|t18=344856.0|t19=408370.5|t20=349571.0|t21=398498.4|t22=347655.7|t23=346189.3
+{"n_kv_max": 4096, "n_batch": 512, "n_ubatch": 256, "flash_attn": 0, "is_pp_shared": 0, "n_gpu_layers": -1, "n_threads": 24, "n_threads_batch": 24, "pp": 512, "tg": 1, "pl": 1, "n_kv": 513, "t_pp": 11.064626, "speed_pp": 46.273594, "t_tg": 0.459329, "speed_tg": 2.177089, "t": 11.523954, "speed": 44.515968}
+
+main: note: llama_perf_context_print classifies any synchronized decode with more than one queued token as prompt eval; for batched TG with pl > 1, rely on the table above for PP/TG split.
+llama_perf_context_print:        load time =    1204.40 ms
+llama_perf_context_print: prompt eval time =   18694.08 ms /   896 tokens (   20.86 ms per token,    47.93 tokens per second)
+llama_perf_context_print:        eval time =    1365.61 ms /     3 runs   (  455.20 ms per token,     2.20 tokens per second)
+llama_perf_context_print:       total time =   20060.10 ms /   899 tokens
+
+

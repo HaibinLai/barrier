@@ -1,0 +1,270 @@
+build: 62 (f56d77b) with cc (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0 for x86_64-linux-gnu
+/proc/sys/kernel/numa_balancing is enabled, this has been observed to impair performance
+llama_model_loader: loaded meta data with 38 key-value pairs and 398 tensors from /home/haibin/model/Qwen3-4B-Ins-2507-f16.gguf (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = qwen3
+llama_model_loader: - kv   1:                               general.type str              = model
+llama_model_loader: - kv   2:                               general.name str              = Qwen3-4B-Instruct-2507
+llama_model_loader: - kv   3:                            general.version str              = 2507
+llama_model_loader: - kv   4:                           general.finetune str              = Instruct
+llama_model_loader: - kv   5:                           general.basename str              = Qwen3-4B-Instruct-2507
+llama_model_loader: - kv   6:                       general.quantized_by str              = Unsloth
+llama_model_loader: - kv   7:                         general.size_label str              = 4B
+llama_model_loader: - kv   8:                            general.license str              = apache-2.0
+llama_model_loader: - kv   9:                       general.license.link str              = https://huggingface.co/Qwen/Qwen3-4B-...
+llama_model_loader: - kv  10:                           general.repo_url str              = https://huggingface.co/unsloth
+llama_model_loader: - kv  11:                   general.base_model.count u32              = 1
+llama_model_loader: - kv  12:                  general.base_model.0.name str              = Qwen3 4B Instruct 2507
+llama_model_loader: - kv  13:               general.base_model.0.version str              = 2507
+llama_model_loader: - kv  14:          general.base_model.0.organization str              = Qwen
+llama_model_loader: - kv  15:              general.base_model.0.repo_url str              = https://huggingface.co/Qwen/Qwen3-4B-...
+llama_model_loader: - kv  16:                               general.tags arr[str,2]       = ["unsloth", "text-generation"]
+llama_model_loader: - kv  17:                          qwen3.block_count u32              = 36
+llama_model_loader: - kv  18:                       qwen3.context_length u32              = 262144
+llama_model_loader: - kv  19:                     qwen3.embedding_length u32              = 2560
+llama_model_loader: - kv  20:                  qwen3.feed_forward_length u32              = 9728
+llama_model_loader: - kv  21:                 qwen3.attention.head_count u32              = 32
+llama_model_loader: - kv  22:              qwen3.attention.head_count_kv u32              = 8
+llama_model_loader: - kv  23:                       qwen3.rope.freq_base f32              = 5000000.000000
+llama_model_loader: - kv  24:     qwen3.attention.layer_norm_rms_epsilon f32              = 0.000001
+llama_model_loader: - kv  25:                 qwen3.attention.key_length u32              = 128
+llama_model_loader: - kv  26:               qwen3.attention.value_length u32              = 128
+llama_model_loader: - kv  27:                          general.file_type u32              = 1
+llama_model_loader: - kv  28:               general.quantization_version u32              = 2
+llama_model_loader: - kv  29:                       tokenizer.ggml.model str              = gpt2
+llama_model_loader: - kv  30:                         tokenizer.ggml.pre str              = qwen2
+llama_model_loader: - kv  31:                      tokenizer.ggml.tokens arr[str,151936]  = ["!", "\"", "#", "$", "%", "&", "'", ...
+llama_model_loader: - kv  32:                  tokenizer.ggml.token_type arr[i32,151936]  = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+llama_model_loader: - kv  33:                      tokenizer.ggml.merges arr[str,151387]  = ["Ġ Ġ", "ĠĠ ĠĠ", "i n", "Ġ t",...
+llama_model_loader: - kv  34:                tokenizer.ggml.eos_token_id u32              = 151645
+llama_model_loader: - kv  35:            tokenizer.ggml.padding_token_id u32              = 151654
+llama_model_loader: - kv  36:               tokenizer.ggml.add_bos_token bool             = false
+llama_model_loader: - kv  37:                    tokenizer.chat_template str              = {%- if tools %}\n    {{- '<|im_start|>...
+llama_model_loader: - type  f32:  145 tensors
+llama_model_loader: - type  f16:  253 tensors
+print_info: file format = GGUF V3 (latest)
+print_info: file type   = F16
+print_info: file size   = 7.49 GiB (16.00 BPW) 
+load: special tokens cache size = 26
+load: token to piece cache size = 0.9311 MB
+print_info: arch             = qwen3
+print_info: vocab_only       = 0
+print_info: n_ctx_train      = 262144
+print_info: n_embd           = 2560
+print_info: n_layer          = 36
+print_info: n_head           = 32
+print_info: n_head_kv        = 8
+print_info: n_rot            = 128
+print_info: n_swa            = 0
+print_info: is_swa_any       = 0
+print_info: n_embd_head_k    = 128
+print_info: n_embd_head_v    = 128
+print_info: n_gqa            = 4
+print_info: n_embd_k_gqa     = 1024
+print_info: n_embd_v_gqa     = 1024
+print_info: f_norm_eps       = 0.0e+00
+print_info: f_norm_rms_eps   = 1.0e-06
+print_info: f_clamp_kqv      = 0.0e+00
+print_info: f_max_alibi_bias = 0.0e+00
+print_info: f_logit_scale    = 0.0e+00
+print_info: f_attn_scale     = 0.0e+00
+print_info: n_ff             = 9728
+print_info: n_expert         = 0
+print_info: n_expert_used    = 0
+print_info: causal attn      = 1
+print_info: pooling type     = 0
+print_info: rope type        = 2
+print_info: rope scaling     = linear
+print_info: freq_base_train  = 5000000.0
+print_info: freq_scale_train = 1
+print_info: n_ctx_orig_yarn  = 262144
+print_info: rope_finetuned   = unknown
+print_info: ssm_d_conv       = 0
+print_info: ssm_d_inner      = 0
+print_info: ssm_d_state      = 0
+print_info: ssm_dt_rank      = 0
+print_info: ssm_dt_b_c_rms   = 0
+print_info: model type       = 4B
+print_info: model params     = 4.02 B
+print_info: general.name     = Qwen3-4B-Instruct-2507
+print_info: vocab type       = BPE
+print_info: n_vocab          = 151936
+print_info: n_merges         = 151387
+print_info: BOS token        = 11 ','
+print_info: EOS token        = 151645 '<|im_end|>'
+print_info: EOT token        = 151645 '<|im_end|>'
+print_info: PAD token        = 151654 '<|vision_pad|>'
+print_info: LF token         = 198 'Ċ'
+print_info: FIM PRE token    = 151659 '<|fim_prefix|>'
+print_info: FIM SUF token    = 151661 '<|fim_suffix|>'
+print_info: FIM MID token    = 151660 '<|fim_middle|>'
+print_info: FIM PAD token    = 151662 '<|fim_pad|>'
+print_info: FIM REP token    = 151663 '<|repo_name|>'
+print_info: FIM SEP token    = 151664 '<|file_sep|>'
+print_info: EOG token        = 151643 '<|endoftext|>'
+print_info: EOG token        = 151645 '<|im_end|>'
+print_info: EOG token        = 151662 '<|fim_pad|>'
+print_info: EOG token        = 151663 '<|repo_name|>'
+print_info: EOG token        = 151664 '<|file_sep|>'
+print_info: max token length = 256
+load_tensors: loading model tensors, this can take a while... (mmap = true)
+load_tensors:   CPU_Mapped model buffer size =  7672.62 MiB
+............................................................................................
+llama_context: constructing llama_context
+llama_context: n_seq_max     = 1
+llama_context: n_ctx         = 4096
+llama_context: n_ctx_per_seq = 4096
+llama_context: n_batch       = 512
+llama_context: n_ubatch      = 256
+llama_context: causal_attn   = 1
+llama_context: flash_attn    = 0
+llama_context: freq_base     = 5000000.0
+llama_context: freq_scale    = 1
+llama_context: n_ctx_per_seq (4096) < n_ctx_train (262144) -- the full capacity of the model will not be utilized
+llama_context:        CPU  output buffer size =     0.58 MiB
+llama_kv_cache_unified:        CPU KV buffer size =   576.00 MiB
+llama_kv_cache_unified: size =  576.00 MiB (  4096 cells,  36 layers,  1 seqs), K (f16):  288.00 MiB, V (f16):  288.00 MiB
+llama_context:        CPU compute buffer size =   150.88 MiB
+llama_context: graph nodes  = 1446
+llama_context: graph splits = 1
+GGML_PERF_ALL|nth=24|graph_us=511800.2|avg_compute_us=372519.5|avg_barrier_us=137398.7|avg_idle_us=1882.0|t0_compute_us=235605.1|t0_barrier_us=275799.7|t0_idle_us=395.4|max_compute_us=430391.3|min_compute_us=230504.7
+GGML_PERF_THREADS|nth=24|t0=235605.1|t1=383684.8|t2=364721.9|t3=396002.5|t4=372263.6|t5=400611.1|t6=378304.1|t7=377146.0|t8=234470.8|t9=385620.7|t10=375673.8|t11=401121.4|t12=406188.8|t13=430391.3|t14=411705.8|t15=411826.1|t16=230504.7|t17=387047.7|t18=373636.2|t19=388268.9|t20=398814.7|t21=418493.8|t22=401766.4|t23=376598.1
+GGML_PERF_ALL|nth=24|graph_us=1423597.6|avg_compute_us=1217052.1|avg_barrier_us=201383.2|avg_idle_us=5162.3|t0_compute_us=840431.3|t0_barrier_us=571668.6|t0_idle_us=11497.7|max_compute_us=1334149.0|min_compute_us=809145.7
+GGML_PERF_THREADS|nth=24|t0=840431.3|t1=1267670.7|t2=1229612.1|t3=1315776.4|t4=1250117.4|t5=1332462.1|t6=1271903.5|t7=1279842.9|t8=810873.6|t9=1281016.7|t10=1251081.2|t11=1318315.4|t12=1259729.5|t13=1334149.0|t14=1265036.3|t15=1280190.8|t16=809145.7|t17=1284101.6|t18=1252221.0|t19=1297864.9|t20=1225900.0|t21=1299367.4|t22=1225789.4|t23=1226650.3
+GGML_PERF_ALL|nth=24|graph_us=411767.1|avg_compute_us=313369.7|avg_barrier_us=92205.3|avg_idle_us=6192.1|t0_compute_us=177723.5|t0_barrier_us=220186.9|t0_idle_us=13856.8|max_compute_us=368550.3|min_compute_us=175186.8
+GGML_PERF_THREADS|nth=24|t0=177723.5|t1=348460.8|t2=300213.9|t3=358389.0|t4=308771.9|t5=368550.3|t6=309360.5|t7=326442.7|t8=175394.2|t9=355167.5|t10=311079.5|t11=362867.4|t12=309101.5|t13=367107.6|t14=315706.3|t15=326225.8|t16=175186.8|t17=354173.6|t18=313914.7|t19=362512.5|t20=307818.6|t21=368457.4|t22=305624.5|t23=312621.0
+GGML_PERF_ALL|nth=24|graph_us=409949.8|avg_compute_us=313798.4|avg_barrier_us=90020.5|avg_idle_us=6130.9|t0_compute_us=179021.7|t0_barrier_us=217006.9|t0_idle_us=13921.3|max_compute_us=371911.7|min_compute_us=176842.3
+GGML_PERF_THREADS|nth=24|t0=179021.7|t1=354633.2|t2=299788.1|t3=361856.9|t4=304014.7|t5=367923.0|t6=308847.4|t7=318445.9|t8=177256.3|t9=361087.7|t10=307564.2|t11=370488.6|t12=309274.8|t13=371911.7|t14=314444.7|t15=323194.0|t16=176842.3|t17=358602.2|t18=311151.0|t19=369520.7|t20=304139.5|t21=366990.3|t22=302813.8|t23=311349.6
+GGML_PERF_ALL|nth=24|graph_us=411218.2|avg_compute_us=313133.1|avg_barrier_us=91771.4|avg_idle_us=6313.8|t0_compute_us=177107.8|t0_barrier_us=220099.5|t0_idle_us=14010.9|max_compute_us=368250.3|min_compute_us=175431.7
+GGML_PERF_THREADS|nth=24|t0=177107.8|t1=353839.6|t2=295559.3|t3=355026.0|t4=312001.2|t5=368235.6|t6=316642.4|t7=318901.3|t8=175586.5|t9=357754.6|t10=305938.6|t11=359963.2|t12=316572.1|t13=368250.3|t14=314258.9|t15=324293.8|t16=175431.7|t17=355814.9|t18=306240.4|t19=357889.2|t20=313644.6|t21=365657.9|t22=307760.1|t23=312823.4
+GGML_PERF_ALL|nth=24|graph_us=414885.5|avg_compute_us=313826.5|avg_barrier_us=94935.1|avg_idle_us=6123.8|t0_compute_us=175696.0|t0_barrier_us=225302.1|t0_idle_us=13887.5|max_compute_us=373215.2|min_compute_us=173349.9
+GGML_PERF_THREADS|nth=24|t0=175696.0|t1=357215.6|t2=305598.8|t3=355400.2|t4=307200.5|t5=370070.9|t6=309573.7|t7=322468.1|t8=173406.6|t9=361954.8|t10=312790.9|t11=359915.4|t12=307929.0|t13=373215.2|t14=310277.6|t15=323549.6|t16=173349.9|t17=363559.6|t18=312297.9|t19=366099.4|t20=304652.7|t21=369327.5|t22=302187.7|t23=314098.6
+GGML_PERF_ALL|nth=24|graph_us=408340.4|avg_compute_us=312347.9|avg_barrier_us=89790.2|avg_idle_us=6202.3|t0_compute_us=177009.9|t0_barrier_us=217337.2|t0_idle_us=13993.3|max_compute_us=364451.6|min_compute_us=175022.5
+GGML_PERF_THREADS|nth=24|t0=177009.9|t1=356857.4|t2=296122.0|t3=354784.8|t4=304545.1|t5=359182.2|t6=314623.7|t7=322384.7|t8=175022.5|t9=361763.4|t10=305188.2|t11=359133.5|t12=313507.2|t13=362782.9|t14=317719.3|t15=328489.4|t16=175188.4|t17=364451.6|t18=303762.7|t19=356732.8|t20=304169.3|t21=360280.9|t22=307943.2|t23=314704.6
+GGML_PERF_ALL|nth=24|graph_us=408680.8|avg_compute_us=311255.5|avg_barrier_us=91232.5|avg_idle_us=6192.7|t0_compute_us=175553.0|t0_barrier_us=219205.3|t0_idle_us=13922.4|max_compute_us=364679.9|min_compute_us=172988.3
+GGML_PERF_THREADS|nth=24|t0=175553.0|t1=350035.3|t2=299133.7|t3=357443.4|t4=303607.5|t5=361955.2|t6=315378.8|t7=320314.7|t8=174136.6|t9=350109.4|t10=310522.0|t11=364222.0|t12=304919.9|t13=364679.9|t14=316932.1|t15=322339.4|t16=172988.3|t17=353848.9|t18=309600.5|t19=362993.5|t20=300446.0|t21=360452.2|t22=311498.4|t23=307022.4
+GGML_PERF_ALL|nth=24|graph_us=415640.7|avg_compute_us=316744.2|avg_barrier_us=92777.0|avg_idle_us=6119.4|t0_compute_us=178053.4|t0_barrier_us=223795.4|t0_idle_us=13791.9|max_compute_us=370691.8|min_compute_us=176545.4
+GGML_PERF_THREADS|nth=24|t0=178053.4|t1=362861.9|t2=300678.7|t3=364972.3|t4=313892.6|t5=368218.6|t6=317303.7|t7=321787.1|t8=176634.1|t9=367528.2|t10=306049.4|t11=367074.3|t12=315021.3|t13=367636.0|t14=319259.8|t15=328635.9|t16=176545.4|t17=366309.8|t18=308034.1|t19=370691.8|t20=312180.2|t21=365744.5|t22=310565.7|t23=316182.9
+GGML_PERF_ALL|nth=24|graph_us=415179.8|avg_compute_us=315096.6|avg_barrier_us=93928.9|avg_idle_us=6154.3|t0_compute_us=177796.9|t0_barrier_us=223334.8|t0_idle_us=14048.1|max_compute_us=369258.4|min_compute_us=175767.1
+GGML_PERF_THREADS|nth=24|t0=177796.9|t1=363821.5|t2=294449.3|t3=361059.0|t4=309545.0|t5=363596.1|t6=322272.2|t7=321083.7|t8=175803.1|t9=365158.4|t10=304844.3|t11=369258.4|t12=310012.7|t13=368481.4|t14=324366.4|t15=324991.6|t16=175767.1|t17=366900.9|t18=303323.1|t19=364481.1|t20=304887.8|t21=359110.4|t22=316683.5|t23=314625.6
+GGML_PERF_ALL|nth=24|graph_us=407243.4|avg_compute_us=309675.8|avg_barrier_us=91368.9|avg_idle_us=6198.8|t0_compute_us=175796.3|t0_barrier_us=217475.3|t0_idle_us=13971.8|max_compute_us=361151.4|min_compute_us=172583.6
+GGML_PERF_THREADS|nth=24|t0=175796.3|t1=354438.5|t2=293127.4|t3=359212.9|t4=310965.7|t5=357441.2|t6=302105.0|t7=323558.2|t8=172598.3|t9=356604.3|t10=301471.1|t11=359448.4|t12=311593.4|t13=361151.4|t14=308986.6|t15=326934.4|t16=172583.6|t17=358996.2|t18=299880.7|t19=358333.6|t20=306815.9|t21=353558.1|t22=299514.4|t23=307103.9
+GGML_PERF_ALL|nth=24|graph_us=413333.3|avg_compute_us=314598.9|avg_barrier_us=92606.9|avg_idle_us=6127.5|t0_compute_us=177332.7|t0_barrier_us=222077.4|t0_idle_us=13923.2|max_compute_us=366703.0|min_compute_us=174862.1
+GGML_PERF_THREADS|nth=24|t0=177332.7|t1=353970.5|t2=302213.0|t3=360816.4|t4=308272.1|t5=366537.0|t6=316410.8|t7=321721.0|t8=175120.5|t9=359470.7|t10=312381.4|t11=366703.0|t12=311814.3|t13=366150.8|t14=318602.5|t15=325961.1|t16=174862.1|t17=362048.7|t18=310567.3|t19=361452.6|t20=309917.0|t21=362610.6|t22=312400.1|t23=313036.8
+GGML_PERF_ALL|nth=24|graph_us=413446.9|avg_compute_us=314703.0|avg_barrier_us=92597.8|avg_idle_us=6146.1|t0_compute_us=178532.7|t0_barrier_us=221017.0|t0_idle_us=13897.2|max_compute_us=368347.2|min_compute_us=176451.1
+GGML_PERF_THREADS|nth=24|t0=178532.7|t1=353540.0|t2=305666.4|t3=357386.9|t4=310677.6|t5=368072.6|t6=317324.1|t7=322955.7|t8=176741.2|t9=357777.2|t10=311166.5|t11=365159.0|t12=315056.2|t13=368347.2|t14=324532.4|t15=318847.4|t16=176451.1|t17=357102.0|t18=308456.8|t19=361004.8|t20=309996.9|t21=362616.2|t22=312290.5|t23=313171.2
+GGML_PERF_ALL|nth=24|graph_us=412823.5|avg_compute_us=314953.7|avg_barrier_us=91739.6|avg_idle_us=6130.2|t0_compute_us=178080.4|t0_barrier_us=220845.3|t0_idle_us=13897.8|max_compute_us=374647.4|min_compute_us=176810.5
+GGML_PERF_THREADS|nth=24|t0=178080.4|t1=352339.2|t2=306047.1|t3=357074.0|t4=308165.1|t5=371350.8|t6=311600.0|t7=329726.1|t8=177026.9|t9=355343.9|t10=312074.1|t11=364461.9|t12=309248.9|t13=374647.4|t14=314095.9|t15=329244.5|t16=176810.5|t17=357066.2|t18=315145.7|t19=362738.0|t20=300934.1|t21=372320.5|t22=302641.8|t23=320706.5
+GGML_PERF_ALL|nth=24|graph_us=409426.7|avg_compute_us=312121.7|avg_barrier_us=91322.2|avg_idle_us=5982.8|t0_compute_us=176794.9|t0_barrier_us=218637.0|t0_idle_us=13994.9|max_compute_us=372513.4|min_compute_us=174668.8
+GGML_PERF_THREADS|nth=24|t0=176794.9|t1=346155.5|t2=301716.9|t3=356528.8|t4=300596.4|t5=369672.4|t6=310227.1|t7=326671.0|t8=175420.0|t9=351785.1|t10=308670.6|t11=365539.5|t12=301903.7|t13=372513.4|t14=312823.2|t15=329141.4|t16=174668.8|t17=353006.2|t18=308969.0|t19=362274.9|t20=299168.6|t21=371797.6|t22=299073.2|t23=315802.1
+GGML_PERF_ALL|nth=24|graph_us=405888.9|avg_compute_us=309554.4|avg_barrier_us=90144.0|avg_idle_us=6190.6|t0_compute_us=175922.0|t0_barrier_us=215958.4|t0_idle_us=14008.6|max_compute_us=362499.4|min_compute_us=173720.9
+GGML_PERF_THREADS|nth=24|t0=175922.0|t1=358184.5|t2=299348.9|t3=355007.7|t4=296264.4|t5=360972.6|t6=305452.2|t7=317782.0|t8=173956.1|t9=361710.9|t10=306315.5|t11=362499.4|t12=300211.3|t13=359309.6|t14=313135.9|t15=322934.5|t16=173720.9|t17=359390.1|t18=304224.1|t19=362332.0|t20=293445.6|t21=348914.1|t22=308634.6|t23=309636.1
+GGML_PERF_ALL|nth=24|graph_us=406358.8|avg_compute_us=309444.9|avg_barrier_us=90771.4|avg_idle_us=6142.5|t0_compute_us=175024.9|t0_barrier_us=217385.2|t0_idle_us=13948.8|max_compute_us=363324.3|min_compute_us=171593.9
+GGML_PERF_THREADS|nth=24|t0=175024.9|t1=358139.4|t2=285724.1|t3=351859.7|t4=300228.5|t5=359908.0|t6=306726.2|t7=326926.8|t8=172053.9|t9=359439.3|t10=296325.1|t11=355190.5|t12=303050.9|t13=362835.3|t14=317988.6|t15=329387.7|t16=171593.9|t17=363324.3|t18=295070.5|t19=356671.0|t20=301504.1|t21=358005.2|t22=302764.0|t23=316935.5
+GGML_PERF_ALL|nth=24|graph_us=415093.2|avg_compute_us=315534.5|avg_barrier_us=93360.6|avg_idle_us=6198.0|t0_compute_us=178120.3|t0_barrier_us=222993.3|t0_idle_us=13979.6|max_compute_us=376432.7|min_compute_us=175216.4
+GGML_PERF_THREADS|nth=24|t0=178120.3|t1=351459.0|t2=292761.0|t3=356682.5|t4=314660.5|t5=371081.5|t6=324906.0|t7=330612.5|t8=175216.4|t9=351490.7|t10=304186.8|t11=357494.7|t12=315616.3|t13=376432.7|t14=326590.0|t15=330439.3|t16=175822.3|t17=355124.8|t18=305292.3|t19=359573.5|t20=309453.7|t21=372891.3|t22=318400.1|t23=318520.5
+GGML_PERF_ALL|nth=24|graph_us=411590.1|avg_compute_us=313472.2|avg_barrier_us=91967.7|avg_idle_us=6150.2|t0_compute_us=178155.4|t0_barrier_us=219580.7|t0_idle_us=13854.0|max_compute_us=365577.4|min_compute_us=175478.3
+GGML_PERF_THREADS|nth=24|t0=178155.4|t1=364060.1|t2=300251.3|t3=357572.1|t4=307927.2|t5=363892.9|t6=315324.7|t7=323048.8|t8=175595.2|t9=365577.4|t10=309804.5|t11=363960.8|t12=308711.9|t13=363217.9|t14=313880.7|t15=325637.2|t16=175478.3|t17=363885.4|t18=303330.1|t19=362676.2|t20=300999.7|t21=356188.7|t22=306242.1|t23=317913.9
+GGML_PERF_ALL|nth=24|graph_us=412419.3|avg_compute_us=314999.2|avg_barrier_us=91277.8|avg_idle_us=6142.3|t0_compute_us=177525.6|t0_barrier_us=220928.6|t0_idle_us=13965.1|max_compute_us=374182.1|min_compute_us=175452.7
+GGML_PERF_THREADS|nth=24|t0=177525.6|t1=354249.5|t2=294977.0|t3=356027.1|t4=310116.8|t5=368234.8|t6=322762.8|t7=319689.8|t8=176005.1|t9=357624.6|t10=303194.9|t11=367586.2|t12=311616.9|t13=374182.1|t14=327865.7|t15=326261.8|t16=175452.7|t17=359904.3|t18=301463.3|t19=367467.1|t20=308241.9|t21=369810.9|t22=315465.3|t23=314254.8
+GGML_PERF_ALL|nth=24|graph_us=409327.9|avg_compute_us=311527.3|avg_barrier_us=91635.8|avg_idle_us=6164.8|t0_compute_us=175892.8|t0_barrier_us=219540.5|t0_idle_us=13894.6|max_compute_us=369581.2|min_compute_us=173488.9
+GGML_PERF_THREADS|nth=24|t0=175892.8|t1=355967.2|t2=299890.3|t3=351779.1|t4=308618.8|t5=365938.4|t6=307929.3|t7=314901.8|t8=173682.0|t9=357934.1|t10=305218.4|t11=358833.5|t12=311473.4|t13=369581.2|t14=312347.9|t15=320534.1|t16=173488.9|t17=361530.2|t18=308111.6|t19=357798.0|t20=307296.5|t21=363125.0|t22=304581.9|t23=310201.9
+GGML_PERF_ALL|nth=24|graph_us=410210.9|avg_compute_us=311890.4|avg_barrier_us=92157.0|avg_idle_us=6163.6|t0_compute_us=175951.7|t0_barrier_us=220423.9|t0_idle_us=13835.3|max_compute_us=369220.1|min_compute_us=173925.2
+GGML_PERF_THREADS|nth=24|t0=175951.7|t1=350838.1|t2=299426.6|t3=351310.9|t4=309221.0|t5=365632.9|t6=306339.9|t7=325653.3|t8=174473.8|t9=357947.2|t10=310595.5|t11=358492.1|t12=311537.6|t13=369220.1|t14=310828.6|t15=327176.4|t16=173925.2|t17=357830.9|t18=310670.1|t19=354498.2|t20=302953.7|t21=362453.1|t22=301269.8|t23=317122.6
+GGML_PERF_ALL|nth=24|graph_us=409015.6|avg_compute_us=311269.7|avg_barrier_us=91569.6|avg_idle_us=6176.3|t0_compute_us=174860.3|t0_barrier_us=220288.5|t0_idle_us=13866.9|max_compute_us=373048.9|min_compute_us=172661.5
+GGML_PERF_THREADS|nth=24|t0=174860.3|t1=336923.9|t2=300188.8|t3=370215.5|t4=304669.9|t5=359932.0|t6=314731.4|t7=325330.9|t8=173532.5|t9=346354.8|t10=304941.0|t11=370288.6|t12=305537.4|t13=363224.5|t14=315067.9|t15=327835.8|t16=172661.5|t17=348510.1|t18=308400.0|t19=373048.9|t20=300120.4|t21=356434.4|t22=304008.4|t23=313655.2
+GGML_PERF_ALL|nth=24|graph_us=414657.6|avg_compute_us=317035.6|avg_barrier_us=91538.4|avg_idle_us=6083.6|t0_compute_us=181552.7|t0_barrier_us=219231.9|t0_idle_us=13873.0|max_compute_us=372082.0|min_compute_us=179406.3
+GGML_PERF_THREADS|nth=24|t0=181552.7|t1=360432.6|t2=305466.6|t3=356437.7|t4=309811.9|t5=367096.0|t6=318264.4|t7=331393.0|t8=179406.3|t9=363163.2|t10=313476.9|t11=362193.0|t12=310841.0|t13=372082.0|t14=317748.7|t15=330302.2|t16=179613.2|t17=364219.1|t18=314611.3|t19=363348.7|t20=304046.6|t21=368063.1|t22=311492.2|t23=323793.1
+GGML_PERF_ALL|nth=24|graph_us=408813.3|avg_compute_us=312904.4|avg_barrier_us=89778.8|avg_idle_us=6130.1|t0_compute_us=176440.8|t0_barrier_us=218469.0|t0_idle_us=13903.5|max_compute_us=363317.6|min_compute_us=175680.1
+GGML_PERF_THREADS|nth=24|t0=176440.8|t1=357901.5|t2=295243.6|t3=357469.5|t4=307741.7|t5=360899.0|t6=313308.1|t7=326808.1|t8=175844.9|t9=362604.1|t10=304694.1|t11=360492.5|t12=313722.8|t13=361958.3|t14=315423.7|t15=329308.8|t16=175680.1|t17=363317.6|t18=303698.2|t19=363024.1|t20=304778.0|t21=358369.4|t22=302558.6|t23=318418.5
+GGML_PERF_ALL|nth=24|graph_us=411031.9|avg_compute_us=314255.2|avg_barrier_us=90613.2|avg_idle_us=6163.6|t0_compute_us=178150.4|t0_barrier_us=219023.0|t0_idle_us=13858.6|max_compute_us=369093.0|min_compute_us=174898.8
+GGML_PERF_THREADS|nth=24|t0=178150.4|t1=351584.7|t2=290580.7|t3=359237.6|t4=311754.9|t5=366267.0|t6=315147.7|t7=327780.5|t8=176438.5|t9=357931.4|t10=309071.2|t11=369093.0|t12=312976.5|t13=367324.5|t14=315732.7|t15=332097.5|t16=174898.8|t17=355910.9|t18=306752.9|t19=363423.1|t20=308550.6|t21=364654.2|t22=308386.9|t23=318378.8
+GGML_PERF_ALL|nth=24|graph_us=406283.5|avg_compute_us=308818.7|avg_barrier_us=91255.1|avg_idle_us=6209.6|t0_compute_us=174128.3|t0_barrier_us=218177.2|t0_idle_us=13978.0|max_compute_us=367416.5|min_compute_us=171343.8
+GGML_PERF_THREADS|nth=24|t0=174128.3|t1=350007.8|t2=293040.5|t3=356087.9|t4=303663.4|t5=366802.7|t6=299117.7|t7=313067.2|t8=172111.8|t9=355503.8|t10=307120.9|t11=359042.4|t12=306594.6|t13=367128.4|t14=305459.1|t15=322087.4|t16=171343.8|t17=356125.4|t18=298831.3|t19=360876.8|t20=301475.8|t21=367416.5|t22=292944.3|t23=311671.3
+GGML_PERF_ALL|nth=24|graph_us=414087.2|avg_compute_us=313142.7|avg_barrier_us=94729.6|avg_idle_us=6214.9|t0_compute_us=176003.5|t0_barrier_us=224093.5|t0_idle_us=13990.2|max_compute_us=370517.6|min_compute_us=173213.6
+GGML_PERF_THREADS|nth=24|t0=176003.5|t1=350585.9|t2=298655.9|t3=364628.3|t4=305836.6|t5=368262.4|t6=315424.2|t7=326293.5|t8=173436.4|t9=352459.1|t10=304921.2|t11=369199.3|t12=306461.7|t13=370517.6|t14=317640.9|t15=323116.9|t16=173213.6|t17=353006.8|t18=304945.5|t19=369308.9|t20=303569.7|t21=368599.5|t22=305396.8|t23=313940.7
+GGML_PERF_ALL|nth=24|graph_us=403476.4|avg_compute_us=307519.7|avg_barrier_us=89715.7|avg_idle_us=6241.0|t0_compute_us=175451.6|t0_barrier_us=214079.9|t0_idle_us=13945.0|max_compute_us=367622.3|min_compute_us=173586.1
+GGML_PERF_THREADS|nth=24|t0=175451.6|t1=334862.9|t2=300625.1|t3=362408.7|t4=296995.9|t5=363560.5|t6=301030.3|t7=318279.4|t8=173586.1|t9=342395.0|t10=308396.8|t11=365269.9|t12=297991.2|t13=366212.0|t14=300479.2|t15=320173.7|t16=173748.9|t17=345315.2|t18=310634.7|t19=367622.3|t20=292597.8|t21=359994.0|t22=291880.7|t23=310959.9
+GGML_PERF_ALL|nth=24|graph_us=415651.0|avg_compute_us=314525.3|avg_barrier_us=94807.5|avg_idle_us=6318.3|t0_compute_us=176300.1|t0_barrier_us=225277.9|t0_idle_us=14073.1|max_compute_us=365231.4|min_compute_us=174451.4
+GGML_PERF_THREADS|nth=24|t0=176300.1|t1=360210.3|t2=294737.2|t3=358406.5|t4=311688.7|t5=359777.9|t6=309945.7|t7=331735.8|t8=175686.1|t9=359958.1|t10=310921.3|t11=364252.1|t12=307854.5|t13=365175.1|t14=314207.5|t15=337201.5|t16=174451.4|t17=361290.8|t18=309106.7|t19=361867.8|t20=304928.0|t21=365231.4|t22=307825.1|t23=325848.2
+GGML_PERF_ALL|nth=24|graph_us=414232.9|avg_compute_us=315750.9|avg_barrier_us=92194.4|avg_idle_us=6287.5|t0_compute_us=178190.9|t0_barrier_us=222037.5|t0_idle_us=14004.5|max_compute_us=373947.3|min_compute_us=175982.2
+GGML_PERF_THREADS|nth=24|t0=178190.9|t1=368854.6|t2=292884.8|t3=362854.6|t4=310485.6|t5=369924.6|t6=317338.8|t7=317740.7|t8=176451.2|t9=367475.9|t10=309412.3|t11=365563.3|t12=309228.5|t13=373947.3|t14=323832.5|t15=319730.3|t16=175982.2|t17=371307.6|t18=305450.3|t19=365279.7|t20=306862.5|t21=371879.3|t22=314129.2|t23=303214.5
+GGML_PERF_ALL|nth=24|graph_us=414653.6|avg_compute_us=315173.2|avg_barrier_us=93220.4|avg_idle_us=6259.9|t0_compute_us=178142.4|t0_barrier_us=222512.3|t0_idle_us=13998.8|max_compute_us=368346.7|min_compute_us=175649.2
+GGML_PERF_THREADS|nth=24|t0=178142.4|t1=359163.2|t2=303696.4|t3=362143.7|t4=305491.6|t5=366900.9|t6=307729.3|t7=325611.5|t8=175788.7|t9=368346.7|t10=311976.8|t11=366843.9|t12=311597.2|t13=366549.1|t14=315135.1|t15=327601.1|t16=175649.2|t17=366276.1|t18=311456.5|t19=366468.4|t20=306565.3|t21=365501.4|t22=304962.4|t23=314561.1
+GGML_PERF_ALL|nth=24|graph_us=415989.8|avg_compute_us=315873.7|avg_barrier_us=93765.1|avg_idle_us=6351.0|t0_compute_us=178350.9|t0_barrier_us=223485.2|t0_idle_us=14153.8|max_compute_us=372678.9|min_compute_us=176306.3
+GGML_PERF_THREADS|nth=24|t0=178350.9|t1=354715.3|t2=293324.3|t3=365794.5|t4=310186.2|t5=372554.7|t6=317234.9|t7=330170.7|t8=176637.9|t9=363399.5|t10=305953.7|t11=367992.2|t12=306862.4|t13=372272.4|t14=316098.9|t15=331100.0|t16=176306.3|t17=361104.9|t18=306996.2|t19=367303.6|t20=301443.4|t21=372678.9|t22=307346.3|t23=325140.8
+GGML_PERF_ALL|nth=24|graph_us=416723.7|avg_compute_us=317078.1|avg_barrier_us=93333.4|avg_idle_us=6312.2|t0_compute_us=177686.4|t0_barrier_us=225006.4|t0_idle_us=14031.0|max_compute_us=376905.2|min_compute_us=174695.7
+GGML_PERF_THREADS|nth=24|t0=177686.4|t1=364089.2|t2=298703.9|t3=366519.3|t4=311303.1|t5=371179.6|t6=307765.9|t7=329589.1|t8=175235.8|t9=370300.1|t10=309429.6|t11=372873.8|t12=312621.3|t13=376905.2|t14=309593.4|t15=328878.8|t16=174695.7|t17=368381.9|t18=312443.7|t19=370324.9|t20=306986.4|t21=373359.1|t22=302120.2|t23=318887.0
+GGML_PERF_ALL|nth=24|graph_us=415817.1|avg_compute_us=316677.1|avg_barrier_us=92975.2|avg_idle_us=6164.7|t0_compute_us=181405.8|t0_barrier_us=220536.9|t0_idle_us=13874.4|max_compute_us=373447.3|min_compute_us=177707.2
+GGML_PERF_THREADS|nth=24|t0=181405.8|t1=359894.5|t2=300263.1|t3=362061.3|t4=315424.7|t5=373367.5|t6=315695.5|t7=326644.9|t8=177707.2|t9=361423.8|t10=306924.9|t11=365069.0|t12=318363.7|t13=373447.3|t14=315756.8|t15=330015.7|t16=178839.5|t17=369004.8|t18=307639.0|t19=365612.8|t20=313373.3|t21=370538.3|t22=303930.8|t23=307846.6
+GGML_PERF_ALL|nth=24|graph_us=409231.3|avg_compute_us=313062.1|avg_barrier_us=90045.5|avg_idle_us=6123.7|t0_compute_us=180449.6|t0_barrier_us=214878.2|t0_idle_us=13903.5|max_compute_us=367905.3|min_compute_us=178230.9
+GGML_PERF_THREADS|nth=24|t0=180449.6|t1=350967.7|t2=295500.5|t3=361495.8|t4=314972.0|t5=362862.5|t6=314578.8|t7=323180.9|t8=178518.4|t9=356454.6|t10=304624.9|t11=363162.9|t12=313459.7|t13=367905.3|t14=314034.0|t15=321043.2|t16=178230.9|t17=351903.0|t18=306241.4|t19=364201.0|t20=313790.1|t21=361811.2|t22=304431.0|t23=309670.2
+GGML_PERF_ALL|nth=24|graph_us=407587.4|avg_compute_us=312182.7|avg_barrier_us=89175.0|avg_idle_us=6229.8|t0_compute_us=178755.3|t0_barrier_us=214817.9|t0_idle_us=14014.1|max_compute_us=368675.4|min_compute_us=175702.3
+GGML_PERF_THREADS|nth=24|t0=178755.3|t1=354365.9|t2=297102.9|t3=360896.0|t4=306396.2|t5=366734.9|t6=308244.8|t7=318875.5|t8=176671.0|t9=358038.0|t10=303965.5|t11=362568.0|t12=310289.9|t13=368675.4|t14=311101.0|t15=321913.0|t16=175702.3|t17=361951.9|t18=302724.1|t19=367195.0|t20=306155.3|t21=366031.0|t22=301251.8|t23=306779.5
+GGML_PERF_ALL|nth=24|graph_us=414036.1|avg_compute_us=315143.9|avg_barrier_us=92714.8|avg_idle_us=6177.4|t0_compute_us=179271.6|t0_barrier_us=220784.2|t0_idle_us=13980.3|max_compute_us=372725.5|min_compute_us=176857.8
+GGML_PERF_THREADS|nth=24|t0=179271.6|t1=348707.6|t2=303791.6|t3=366796.0|t4=312782.5|t5=368051.2|t6=314921.8|t7=316727.4|t8=177116.4|t9=356765.3|t10=312211.1|t11=372725.5|t12=317485.6|t13=372131.5|t14=314399.7|t15=320365.1|t16=176857.8|t17=357681.0|t18=313166.1|t19=370318.8|t20=316301.1|t21=362664.3|t22=303896.0|t23=308318.8
+GGML_PERF_ALL|nth=24|graph_us=408822.8|avg_compute_us=311890.4|avg_barrier_us=90627.3|avg_idle_us=6305.1|t0_compute_us=178489.6|t0_barrier_us=216296.3|t0_idle_us=14036.9|max_compute_us=369431.3|min_compute_us=175872.6
+GGML_PERF_THREADS|nth=24|t0=178489.6|t1=355278.7|t2=294873.5|t3=363456.6|t4=306219.6|t5=367158.2|t6=302446.1|t7=319338.7|t8=176380.3|t9=361989.8|t10=304903.6|t11=367363.9|t12=310853.9|t13=368269.5|t14=308272.2|t15=319536.3|t16=175872.6|t17=363420.9|t18=301886.0|t19=365919.0|t20=304960.0|t21=369431.3|t22=295018.9|t23=304030.4
+GGML_PERF_ALL|nth=24|graph_us=412301.5|avg_compute_us=313091.9|avg_barrier_us=92867.5|avg_idle_us=6342.1|t0_compute_us=177639.2|t0_barrier_us=220475.4|t0_idle_us=14186.9|max_compute_us=376226.8|min_compute_us=174059.7
+GGML_PERF_THREADS|nth=24|t0=177639.2|t1=349675.9|t2=290650.3|t3=358590.5|t4=314753.8|t5=373826.2|t6=309667.0|t7=321230.5|t8=174791.8|t9=354351.9|t10=303359.9|t11=364249.2|t12=317119.1|t13=376226.8|t14=314304.2|t15=320159.9|t16=174059.7|t17=355536.2|t18=306171.1|t19=362538.4|t20=310978.2|t21=371661.7|t22=307291.2|t23=305372.3
+GGML_PERF_ALL|nth=24|graph_us=411519.8|avg_compute_us=312678.1|avg_barrier_us=92661.5|avg_idle_us=6180.2|t0_compute_us=176681.5|t0_barrier_us=220883.0|t0_idle_us=13955.3|max_compute_us=376757.8|min_compute_us=174670.5
+GGML_PERF_THREADS|nth=24|t0=176681.5|t1=349578.0|t2=288490.9|t3=360665.6|t4=305686.7|t5=370081.5|t6=316657.5|t7=326361.7|t8=175205.5|t9=351115.0|t10=299524.2|t11=371045.3|t12=305968.7|t13=376757.8|t14=312919.4|t15=323638.0|t16=174670.5|t17=356293.6|t18=299984.8|t19=369264.3|t20=304277.6|t21=368928.6|t22=308405.3|t23=312071.9
+GGML_PERF_ALL|nth=24|graph_us=411431.1|avg_compute_us=314076.4|avg_barrier_us=91086.0|avg_idle_us=6268.7|t0_compute_us=179968.8|t0_barrier_us=217384.0|t0_idle_us=14078.3|max_compute_us=373293.7|min_compute_us=177647.2
+GGML_PERF_THREADS|nth=24|t0=179968.8|t1=352422.9|t2=299970.9|t3=371251.0|t4=308231.4|t5=365348.2|t6=310550.6|t7=325506.2|t8=177647.2|t9=355941.5|t10=312478.0|t11=372413.0|t12=309784.1|t13=362804.2|t14=312137.9|t15=325004.0|t16=177852.2|t17=356102.7|t18=311852.1|t19=373293.7|t20=306009.0|t21=360997.8|t22=302732.3|t23=307535.1
+GGML_PERF_ALL|nth=24|graph_us=411757.1|avg_compute_us=315094.0|avg_barrier_us=90109.7|avg_idle_us=6553.5|t0_compute_us=181349.3|t0_barrier_us=216180.2|t0_idle_us=14227.6|max_compute_us=370227.0|min_compute_us=178969.4
+GGML_PERF_THREADS|nth=24|t0=181349.3|t1=353374.2|t2=302331.6|t3=363830.8|t4=308646.7|t5=367212.2|t6=319623.1|t7=318438.4|t8=178969.4|t9=361973.7|t10=309037.2|t11=367177.1|t12=308535.9|t13=368795.5|t14=322093.5|t15=322504.6|t16=179040.7|t17=362209.3|t18=310219.0|t19=370227.0|t20=305788.6|t21=362421.1|t22=309284.2|t23=309172.4
+GGML_PERF_ALL|nth=24|graph_us=410223.5|avg_compute_us=311992.3|avg_barrier_us=91961.6|avg_idle_us=6269.5|t0_compute_us=177168.0|t0_barrier_us=218940.4|t0_idle_us=14115.1|max_compute_us=368712.3|min_compute_us=174147.8
+GGML_PERF_THREADS|nth=24|t0=177168.0|t1=352482.7|t2=295292.7|t3=360589.5|t4=311282.9|t5=366385.7|t6=309099.1|t7=323805.8|t8=174147.8|t9=355786.0|t10=303158.3|t11=363181.2|t12=312562.4|t13=368712.3|t14=312045.6|t15=324625.9|t16=174260.9|t17=354156.9|t18=302067.1|t19=366143.6|t20=304025.9|t21=364001.3|t22=299061.1|t23=313772.9
+GGML_PERF_ALL|nth=24|graph_us=416859.4|avg_compute_us=316902.5|avg_barrier_us=93694.0|avg_idle_us=6262.9|t0_compute_us=180502.5|t0_barrier_us=222335.4|t0_idle_us=14021.5|max_compute_us=373898.5|min_compute_us=177300.2
+GGML_PERF_THREADS|nth=24|t0=180502.5|t1=353246.7|t2=303335.9|t3=364804.3|t4=313053.0|t5=371996.8|t6=322043.0|t7=323372.9|t8=178098.1|t9=354761.0|t10=309639.3|t11=372254.6|t12=315032.1|t13=373898.5|t14=324774.0|t15=332941.8|t16=177300.2|t17=355070.7|t18=309264.6|t19=365215.5|t20=311549.6|t21=366158.0|t22=312424.9|t23=314921.1
+GGML_PERF_ALL|nth=24|graph_us=407768.6|avg_compute_us=310851.9|avg_barrier_us=90684.8|avg_idle_us=6232.0|t0_compute_us=178738.1|t0_barrier_us=215062.7|t0_idle_us=13967.9|max_compute_us=365922.0|min_compute_us=176406.1
+GGML_PERF_THREADS|nth=24|t0=178738.1|t1=353021.8|t2=289804.3|t3=354256.7|t4=309574.5|t5=365177.5|t6=311919.9|t7=318757.2|t8=176406.1|t9=355848.3|t10=299534.1|t11=364159.2|t12=309985.9|t13=362420.3|t14=312539.4|t15=321696.1|t16=176716.4|t17=358420.7|t18=300207.6|t19=365922.0|t20=306791.0|t21=358074.2|t22=301915.5|t23=308558.5
+GGML_PERF_ALL|nth=24|graph_us=414372.2|avg_compute_us=316615.0|avg_barrier_us=91540.9|avg_idle_us=6216.3|t0_compute_us=180617.7|t0_barrier_us=219795.5|t0_idle_us=13958.9|max_compute_us=372439.8|min_compute_us=178861.3
+GGML_PERF_THREADS|nth=24|t0=180617.7|t1=352044.4|t2=308982.8|t3=359540.9|t4=309569.2|t5=365969.6|t6=316649.2|t7=326847.9|t8=179474.4|t9=363483.4|t10=313503.9|t11=369525.7|t12=312138.8|t13=372439.8|t14=322588.9|t15=330668.9|t16=178861.3|t17=363372.0|t18=311449.5|t19=366716.3|t20=306795.9|t21=363258.5|t22=304215.1|t23=320045.0
+GGML_PERF_ALL|nth=24|graph_us=410506.6|avg_compute_us=312528.7|avg_barrier_us=91761.4|avg_idle_us=6216.5|t0_compute_us=177809.2|t0_barrier_us=218741.0|t0_idle_us=13956.4|max_compute_us=370304.6|min_compute_us=175069.8
+GGML_PERF_THREADS|nth=24|t0=177809.2|t1=358204.6|t2=293949.8|t3=366026.2|t4=304934.6|t5=359304.1|t6=303806.2|t7=327525.5|t8=175851.6|t9=362892.4|t10=305092.1|t11=370169.1|t12=306416.2|t13=365964.7|t14=309541.6|t15=330404.0|t16=175069.8|t17=363799.8|t18=306385.6|t19=370304.6|t20=303170.9|t21=353792.9|t22=297774.2|t23=312499.3
+GGML_PERF_ALL|nth=24|graph_us=417246.0|avg_compute_us=317082.1|avg_barrier_us=93915.5|avg_idle_us=6248.4|t0_compute_us=181138.3|t0_barrier_us=222097.7|t0_idle_us=14010.0|max_compute_us=374184.9|min_compute_us=179898.7
+GGML_PERF_THREADS|nth=24|t0=181138.3|t1=359546.5|t2=303327.2|t3=368075.0|t4=316382.3|t5=366321.8|t6=312295.6|t7=329081.2|t8=179898.7|t9=361758.0|t10=311246.9|t11=369143.0|t12=318002.9|t13=371267.8|t14=313868.2|t15=327956.2|t16=180057.4|t17=365050.1|t18=310809.4|t19=374184.9|t20=310231.0|t21=366739.9|t22=301004.1|t23=312585.1
+GGML_PERF_ALL|nth=24|graph_us=414521.3|avg_compute_us=316164.7|avg_barrier_us=92056.1|avg_idle_us=6300.5|t0_compute_us=181227.3|t0_barrier_us=219214.9|t0_idle_us=14079.1|max_compute_us=373625.6|min_compute_us=178336.7
+GGML_PERF_THREADS|nth=24|t0=181227.3|t1=367766.5|t2=299016.6|t3=362372.7|t4=312134.1|t5=369908.1|t6=310630.9|t7=328836.7|t8=178336.7|t9=368542.1|t10=305845.1|t11=365339.8|t12=312733.6|t13=373625.6|t14=312342.0|t15=327389.6|t16=178635.3|t17=368249.2|t18=307441.7|t19=363952.6|t20=306039.5|t21=366512.5|t22=303840.5|t23=317233.1
+GGML_PERF_ALL|nth=24|graph_us=419417.4|avg_compute_us=319561.7|avg_barrier_us=93583.8|avg_idle_us=6271.9|t0_compute_us=182578.5|t0_barrier_us=222804.5|t0_idle_us=14034.4|max_compute_us=387232.2|min_compute_us=180137.5
+GGML_PERF_THREADS|nth=24|t0=182578.5|t1=353057.3|t2=312483.5|t3=372931.3|t4=308287.2|t5=382386.1|t6=314245.0|t7=321745.6|t8=180274.5|t9=362919.6|t10=316535.6|t11=380025.8|t12=309416.2|t13=387232.2|t14=316595.0|t15=325272.4|t16=180137.5|t17=364604.5|t18=319248.2|t19=373977.6|t20=304005.1|t21=380433.4|t22=308440.5|t23=312648.1
+GGML_PERF_ALL|nth=24|graph_us=415157.3|avg_compute_us=314859.9|avg_barrier_us=94116.8|avg_idle_us=6180.6|t0_compute_us=178219.6|t0_barrier_us=222907.5|t0_idle_us=14030.1|max_compute_us=380174.2|min_compute_us=176673.0
+GGML_PERF_THREADS|nth=24|t0=178219.6|t1=349203.0|t2=298957.8|t3=357861.6|t4=313904.7|t5=377763.8|t6=309297.0|t7=324368.0|t8=177786.9|t9=362085.5|t10=310351.7|t11=365520.0|t12=316296.8|t13=380174.2|t14=307191.3|t15=326543.9|t16=176673.0|t17=361635.0|t18=309380.2|t19=360687.5|t20=310712.7|t21=370533.1|t22=298117.5|t23=313373.1
+GGML_PERF_ALL|nth=24|graph_us=423067.3|avg_compute_us=321284.2|avg_barrier_us=95618.5|avg_idle_us=6164.6|t0_compute_us=180687.7|t0_barrier_us=228410.0|t0_idle_us=13969.7|max_compute_us=376675.6|min_compute_us=178865.6
+GGML_PERF_THREADS|nth=24|t0=180687.7|t1=374476.3|t2=314970.4|t3=368985.3|t4=312111.9|t5=372131.2|t6=320533.6|t7=324137.0|t8=179377.2|t9=376675.6|t10=318071.2|t11=372882.0|t12=314998.4|t13=375168.0|t14=315675.5|t15=331803.1|t16=178865.6|t17=376648.1|t18=320627.8|t19=375505.1|t20=312345.7|t21=363086.4|t22=312193.8|t23=318863.6
+GGML_PERF_ALL|nth=24|graph_us=409417.5|avg_compute_us=312644.8|avg_barrier_us=90568.3|avg_idle_us=6204.4|t0_compute_us=177725.4|t0_barrier_us=217728.8|t0_idle_us=13963.2|max_compute_us=372121.3|min_compute_us=175176.9
+GGML_PERF_THREADS|nth=24|t0=177725.4|t1=349006.4|t2=295619.1|t3=363531.6|t4=303256.0|t5=366270.1|t6=313110.0|t7=326546.4|t8=175817.6|t9=355836.3|t10=307281.6|t11=366266.0|t12=306007.4|t13=372121.3|t14=311321.4|t15=324999.1|t16=175176.9|t17=356559.3|t18=306423.0|t19=366466.3|t20=301023.8|t21=367362.9|t22=304097.3|t23=311650.0
+GGML_PERF_ALL|nth=24|graph_us=413069.6|avg_compute_us=314460.4|avg_barrier_us=92401.6|avg_idle_us=6207.5|t0_compute_us=177840.0|t0_barrier_us=221294.4|t0_idle_us=13935.2|max_compute_us=370520.2|min_compute_us=175597.0
+GGML_PERF_THREADS|nth=24|t0=177840.0|t1=356575.0|t2=304999.7|t3=358466.7|t4=310403.1|t5=364177.2|t6=311870.4|t7=329727.2|t8=175786.9|t9=359858.3|t10=309581.4|t11=359376.6|t12=309654.6|t13=370520.2|t14=315567.2|t15=329946.5|t16=175597.0|t17=363770.2|t18=313951.9|t19=362412.4|t20=305643.6|t21=360981.2|t22=300215.5|t23=320127.8
+GGML_PERF_ALL|nth=24|graph_us=413095.1|avg_compute_us=314686.4|avg_barrier_us=92175.2|avg_idle_us=6233.6|t0_compute_us=178163.0|t0_barrier_us=220971.7|t0_idle_us=13960.4|max_compute_us=373988.5|min_compute_us=175891.8
+GGML_PERF_THREADS|nth=24|t0=178163.0|t1=355756.1|t2=298962.5|t3=356066.8|t4=307907.2|t5=366235.3|t6=314567.7|t7=327654.1|t8=176129.1|t9=359089.2|t10=309444.6|t11=361957.2|t12=312361.0|t13=373988.5|t14=316880.3|t15=331786.7|t16=175891.8|t17=361047.1|t18=309570.8|t19=363708.0|t20=299848.7|t21=372386.1|t22=308149.7|t23=314921.3
+GGML_PERF_ALL|nth=24|graph_us=413217.4|avg_compute_us=314902.3|avg_barrier_us=92094.6|avg_idle_us=6220.5|t0_compute_us=179697.5|t0_barrier_us=219650.3|t0_idle_us=13869.6|max_compute_us=366835.9|min_compute_us=177417.5
+GGML_PERF_THREADS|nth=24|t0=179697.5|t1=348296.3|t2=304703.3|t3=363631.9|t4=318592.9|t5=366511.5|t6=317021.4|t7=325197.4|t8=178043.5|t9=355043.1|t10=311512.0|t11=366417.6|t12=314203.4|t13=366835.9|t14=315500.0|t15=329063.0|t16=177417.5|t17=353994.0|t18=308810.9|t19=365182.0|t20=313265.3|t21=363050.7|t22=305094.4|t23=310570.4
+GGML_PERF_ALL|nth=24|graph_us=413377.0|avg_compute_us=314763.8|avg_barrier_us=92470.7|avg_idle_us=6142.5|t0_compute_us=178939.7|t0_barrier_us=220540.3|t0_idle_us=13897.0|max_compute_us=374303.9|min_compute_us=177283.6
+GGML_PERF_THREADS|nth=24|t0=178939.7|t1=349782.1|t2=302532.4|t3=356848.3|t4=312364.5|t5=374303.9|t6=309898.1|t7=328481.1|t8=177479.3|t9=356880.9|t10=312343.0|t11=364220.3|t12=316481.5|t13=370948.0|t14=315519.7|t15=331423.2|t16=177283.6|t17=357102.0|t18=313100.1|t19=365654.9|t20=307165.3|t21=366185.5|t22=295543.0|t23=313849.9
+GGML_PERF_ALL|nth=24|graph_us=418511.0|avg_compute_us=319953.5|avg_barrier_us=92340.4|avg_idle_us=6217.1|t0_compute_us=184179.7|t0_barrier_us=220383.7|t0_idle_us=13947.7|max_compute_us=378496.3|min_compute_us=181581.0
+GGML_PERF_THREADS|nth=24|t0=184179.7|t1=366669.5|t2=301959.4|t3=366939.4|t4=312239.2|t5=374834.8|t6=320317.7|t7=327866.4|t8=181868.7|t9=371674.5|t10=312984.7|t11=373111.8|t12=314709.7|t13=378496.3|t14=322625.4|t15=325881.1|t16=181581.0|t17=369016.5|t18=311748.9|t19=372663.1|t20=308591.2|t21=371392.5|t22=312226.1|t23=315306.1
+GGML_PERF_ALL|nth=24|graph_us=418342.1|avg_compute_us=318475.0|avg_barrier_us=93672.7|avg_idle_us=6194.4|t0_compute_us=180139.0|t0_barrier_us=224264.2|t0_idle_us=13939.0|max_compute_us=374177.5|min_compute_us=178241.7
+GGML_PERF_THREADS|nth=24|t0=180139.0|t1=356454.8|t2=304059.1|t3=364429.3|t4=314432.8|t5=371453.5|t6=318024.9|t7=330222.2|t8=178250.9|t9=363874.9|t10=309678.3|t11=371119.3|t12=317884.6|t13=374177.5|t14=325968.3|t15=329522.4|t16=178241.7|t17=364757.8|t18=312403.1|t19=366138.5|t20=313506.7|t21=373732.7|t22=313154.0|t23=311774.1
+GGML_PERF_ALL|nth=24|graph_us=412822.3|avg_compute_us=316088.5|avg_barrier_us=90607.0|avg_idle_us=6126.9|t0_compute_us=179543.9|t0_barrier_us=219400.1|t0_idle_us=13878.4|max_compute_us=373894.6|min_compute_us=178414.8
+GGML_PERF_THREADS|nth=24|t0=179543.9|t1=349104.7|t2=307723.4|t3=372435.5|t4=309699.6|t5=367584.8|t6=314942.7|t7=328133.7|t8=178726.2|t9=350884.0|t10=317625.9|t11=372001.1|t12=309815.5|t13=373894.6|t14=317791.0|t15=329615.1|t16=178414.8|t17=350958.1|t18=314301.4|t19=373240.9|t20=303415.8|t21=365847.5|t22=304256.3|t23=316167.3
+GGML_PERF_ALL|nth=24|graph_us=410499.2|avg_compute_us=313196.5|avg_barrier_us=91149.3|avg_idle_us=6153.4|t0_compute_us=178589.0|t0_barrier_us=217966.1|t0_idle_us=13944.1|max_compute_us=367324.8|min_compute_us=176737.7
+GGML_PERF_THREADS|nth=24|t0=178589.0|t1=350775.7|t2=291066.3|t3=363206.6|t4=315107.4|t5=362938.3|t6=314026.3|t7=320984.0|t8=177371.0|t9=354652.1|t10=303913.8|t11=367324.8|t12=315587.0|t13=364958.9|t14=314833.7|t15=321991.1|t16=176737.7|t17=358949.7|t18=306101.2|t19=364679.2|t20=313525.5|t21=365332.0|t22=302008.3|t23=312055.3
+GGML_PERF_ALL|nth=24|graph_us=411064.2|avg_compute_us=312150.0|avg_barrier_us=92767.1|avg_idle_us=6147.0|t0_compute_us=176207.4|t0_barrier_us=220963.6|t0_idle_us=13893.1|max_compute_us=368455.2|min_compute_us=173989.1
+GGML_PERF_THREADS|nth=24|t0=176207.4|t1=352756.5|t2=297298.4|t3=359887.8|t4=305487.2|t5=364192.5|t6=311551.1|t7=325642.5|t8=174460.3|t9=356982.2|t10=306001.2|t11=368455.2|t12=307901.4|t13=364548.7|t14=311561.1|t15=328447.4|t16=173989.1|t17=359465.9|t18=308351.7|t19=363335.7|t20=304508.1|t21=357930.9|t22=299141.2|t23=313497.6
+GGML_PERF_ALL|nth=24|graph_us=411156.7|avg_compute_us=313412.1|avg_barrier_us=91557.9|avg_idle_us=6186.7|t0_compute_us=178199.1|t0_barrier_us=219070.9|t0_idle_us=13886.6|max_compute_us=372222.2|min_compute_us=175944.6
+GGML_PERF_THREADS|nth=24|t0=178199.1|t1=351937.4|t2=289061.2|t3=360341.3|t4=314553.0|t5=369803.5|t6=308989.8|t7=325845.3|t8=175983.8|t9=359845.6|t10=299115.1|t11=366943.2|t12=314646.4|t13=372222.2|t14=313361.7|t15=331576.4|t16=175944.6|t17=360160.6|t18=301510.4|t19=365013.4|t20=310138.6|t21=361398.1|t22=306955.8|t23=308343.7
+GGML_PERF_ALL|nth=24|graph_us=412102.6|avg_compute_us=314848.7|avg_barrier_us=91064.0|avg_idle_us=6189.9|t0_compute_us=178478.6|t0_barrier_us=219568.4|t0_idle_us=14055.6|max_compute_us=369167.4|min_compute_us=177274.8
+GGML_PERF_THREADS|nth=24|t0=178478.6|t1=358358.1|t2=301362.2|t3=367012.9|t4=314077.7|t5=368990.5|t6=308817.3|t7=326399.9|t8=177274.8|t9=358439.8|t10=309213.2|t11=368184.4|t12=318540.5|t13=369167.4|t14=311693.8|t15=324471.3|t16=177318.0|t17=363518.7|t18=307138.1|t19=368370.3|t20=311859.7|t21=362183.3|t22=294434.0|t23=311065.1
+GGML_PERF_ALL|nth=24|graph_us=410209.8|avg_compute_us=312169.5|avg_barrier_us=91843.9|avg_idle_us=6196.4|t0_compute_us=177872.0|t0_barrier_us=218327.5|t0_idle_us=14010.3|max_compute_us=373554.1|min_compute_us=175709.8
+GGML_PERF_THREADS|nth=24|t0=177872.0|t1=348806.5|t2=298209.1|t3=357395.9|t4=304234.3|t5=368867.4|t6=306901.6|t7=326458.7|t8=175709.8|t9=354650.3|t10=304147.4|t11=364389.4|t12=307554.0|t13=373554.1|t14=312760.9|t15=327408.3|t16=176198.5|t17=355890.0|t18=305894.4|t19=362970.7|t20=304592.5|t21=361963.3|t22=301539.8|t23=314099.3
+{"n_kv_max": 4096, "n_batch": 512, "n_ubatch": 256, "flash_attn": 0, "is_pp_shared": 0, "n_gpu_layers": -1, "n_threads": 24, "n_threads_batch": 24, "pp": 64, "tg": 64, "pl": 1, "n_kv": 128, "t_pp": 1.425095, "speed_pp": 44.909286, "t_tg": 26.488106, "speed_tg": 2.416179, "t": 27.913200, "speed": 4.585644}
+
+main: note: llama_perf_context_print classifies any synchronized decode with more than one queued token as prompt eval; for batched TG with pl > 1, rely on the table above for PP/TG split.
+llama_perf_context_print:        load time =    1214.15 ms
+llama_perf_context_print: prompt eval time =    1425.05 ms /    64 tokens (   22.27 ms per token,    44.91 tokens per second)
+llama_perf_context_print:        eval time =   26487.09 ms /    64 runs   (  413.86 ms per token,     2.42 tokens per second)
+llama_perf_context_print:       total time =   27913.23 ms /   128 tokens
+
+
