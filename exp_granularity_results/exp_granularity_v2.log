@@ -1,0 +1,43 @@
+[02:36:21] ==========================================
+[02:36:21] Experiment v2: Fair Kernel Comparison
+[02:36:21] Start: Tue Apr  7 02:36:21 AM UTC 2026
+[02:36:21] Model: /home/haibin/model/Qwen3-4B-Ins-2507-f16.gguf
+[02:36:21] TF_BIN: /home/haibin/tp/exp_gran_taskflow/build/bin/llama-bench
+[02:36:21] FJ_BIN: /home/haibin/tp/exp_gran_forkjoin_nollama/llama.cpp/build/bin/llama-bench (no llamafile)
+[02:36:21] Shape: M=6912 K=2560 NR1=128
+[02:36:21] ==========================================
+[02:36:21] ==========================================
+[02:36:21] Panel (b) v2: Multi-Core Task Count Sweep (Fair Kernel)
+[02:36:21] ==========================================
+[02:36:21]   chunk_size0=6912 -> tasks=1
+[02:36:21]     Taskflow...
+[02:37:36]     -> Taskflow pp t/s = 6.929221
+[02:37:36]     Fork-Join (no llamafile)...
+[02:38:57]     -> Fork-Join pp t/s = 6.409962
+[02:38:57]   chunk_size0=3456 -> tasks=2
+[02:38:57]     Taskflow...
+[02:40:02]     -> Taskflow pp t/s = 8.005885
+[02:40:02]     Fork-Join (no llamafile)...
+[02:41:12]     -> Fork-Join pp t/s = 7.427122
+[02:41:12]   chunk_size0=1152 -> tasks=6
+[02:41:12]     Taskflow...
+[02:41:48]     -> Taskflow pp t/s = 14.712652
+[02:41:48]     Fork-Join (no llamafile)...
+[02:42:23]     -> Fork-Join pp t/s = 14.942812
+[02:42:23]   chunk_size0=576 -> tasks=12
+[02:42:23]     Taskflow...
+[02:42:50]     -> Taskflow pp t/s = 19.189774
+[02:42:50]     Fork-Join (no llamafile)...
+[02:43:14]     -> Fork-Join pp t/s = 22.315361
+[02:43:14]   chunk_size0=288 -> tasks=24
+[02:43:14]     Taskflow...
+[02:43:36]     -> Taskflow pp t/s = 24.787139
+[02:43:36]     Fork-Join (no llamafile)...
+[02:43:53]     -> Fork-Join pp t/s = 31.482238
+[02:43:53]   chunk_size0=144 -> tasks=48
+[02:43:53]     Taskflow...
+[02:44:12]     -> Taskflow pp t/s = 29.134089
+[02:44:12]     Fork-Join (no llamafile)...
+[02:44:25]     -> Fork-Join pp t/s = 43.562382
+[02:44:25]   chunk_size0=72 -> tasks=96
+[02:44:25]     Taskflow...

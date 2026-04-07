@@ -1,0 +1,13 @@
+mode,chunk_size0,total_tasks,pp_ts
+taskflow,6912,1,6.929221
+forkjoin,6912,1,6.409962
+taskflow,3456,2,8.005885
+forkjoin,3456,2,7.427122
+taskflow,1152,6,14.712652
+forkjoin,1152,6,14.942812
+taskflow,576,12,19.189774
+forkjoin,576,12,22.315361
+taskflow,288,24,24.787139
+forkjoin,288,24,31.482238
+taskflow,144,48,29.134089
+forkjoin,144,48,43.562382

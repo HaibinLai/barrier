@@ -1,0 +1,120 @@
+[01:12:05] ==========================================
+[01:12:05] Experiment: Matmul Task Granularity Sensitivity
+[01:12:05] Start: Tue Apr  7 01:12:05 AM UTC 2026
+[01:12:05] Model: /home/haibin/model/Qwen3-4B-Ins-2507-f16.gguf
+[01:12:05] Shape: M=6912 K=2560 NR1=128
+[01:12:05] ==========================================
+[01:12:05] Smoke test: verifying GGML_CHUNK_SIZE0 env var...
+[01:12:13] Smoke test PASSED: env var detected
+[01:12:13] ==========================================
+[01:12:13] Panel (a): Single-Core Tile Size Sweep
+[01:12:13] ==========================================
+[01:12:13]   chunk_size0=1 (nchunk0=6912, rows/task=1, ws=5.0KB)
+[01:14:02] ==========================================
+[01:14:02] Experiment: Matmul Task Granularity Sensitivity
+[01:14:02] Start: Tue Apr  7 01:14:02 AM UTC 2026
+[01:14:02] Model: /home/haibin/model/Qwen3-4B-Ins-2507-f16.gguf
+[01:14:02] Shape: M=6912 K=2560 NR1=128
+[01:14:02] ==========================================
+[01:14:02] Smoke test: verifying GGML_CHUNK_SIZE0 env var...
+[01:14:10] Smoke test PASSED: env var detected
+[01:14:10] ==========================================
+[01:14:10] Panel (a): Single-Core Tile Size Sweep
+[01:14:10] ==========================================
+[01:14:10]   chunk_size0=4 (nchunk0=1728, rows/task=4, ws=20.0KB)
+[01:14:47]   -> pp t/s = 14.152098
+[01:14:47]   chunk_size0=8 (nchunk0=864, rows/task=8, ws=40.0KB)
+[01:15:24]   -> pp t/s = 14.135248
+[01:15:24]   chunk_size0=16 (nchunk0=432, rows/task=16, ws=80.0KB)
+[01:16:00]   -> pp t/s = 14.557924
+[01:16:00]   chunk_size0=32 (nchunk0=216, rows/task=32, ws=160.0KB)
+[01:16:37]   -> pp t/s = 14.186058
+[01:16:37]   chunk_size0=64 (nchunk0=108, rows/task=64, ws=320.0KB)
+[01:17:14]   -> pp t/s = 14.355816
+[01:17:14]   chunk_size0=128 (nchunk0=54, rows/task=128, ws=640.0KB)
+[01:17:51]   -> pp t/s = 14.415157
+[01:17:51]   chunk_size0=256 (nchunk0=27, rows/task=256, ws=1280.0KB)
+[01:18:27]   -> pp t/s = 14.400232
+[01:18:27]   chunk_size0=512 (nchunk0=14, rows/task=512, ws=2560.0KB)
+[01:19:04]   -> pp t/s = 14.219346
+[01:19:04]   chunk_size0=1024 (nchunk0=7, rows/task=1024, ws=5120.0KB)
+[01:19:41]   -> pp t/s = 14.320934
+[01:19:41]   chunk_size0=2048 (nchunk0=4, rows/task=2048, ws=10240.0KB)
+[01:20:18]   -> pp t/s = 14.191521
+[01:20:18]   chunk_size0=3456 (nchunk0=2, rows/task=3456, ws=17280.0KB)
+[01:20:55]   -> pp t/s = 14.099229
+[01:20:55]   chunk_size0=6912 (nchunk0=1, rows/task=6912, ws=34560.0KB)
+[01:21:32]   -> pp t/s = 14.301815
+[01:21:32] Panel (a) done. Data saved to /home/haibin/tp/exp_granularity_results/panel_a_single_core.csv
+[01:21:32] 
+[01:21:32] ==========================================
+[01:21:32] All experiments complete!
+[01:21:32] Results in: /home/haibin/tp/exp_granularity_results
+[01:21:32] ==========================================
+[01:21:49] ==========================================
+[01:21:49] Experiment: Matmul Task Granularity Sensitivity
+[01:21:49] Start: Tue Apr  7 01:21:49 AM UTC 2026
+[01:21:49] Model: /home/haibin/model/Qwen3-4B-Ins-2507-f16.gguf
+[01:21:49] Shape: M=6912 K=2560 NR1=128
+[01:21:49] ==========================================
+[01:21:49] Smoke test: verifying GGML_CHUNK_SIZE0 env var...
+[01:21:57] Smoke test PASSED: env var detected
+[01:21:57] ==========================================
+[01:21:57] Panel (b): Multi-Core Task Count Sweep
+[01:21:57] ==========================================
+[01:21:57]   chunk_size0=6912 -> tasks=1
+[01:21:57]     Taskflow...
+[01:23:20]     -> Taskflow pp t/s = 6.246270
+[01:23:20]     Fork-Join...
+[01:23:24]     -> Fork-Join pp t/s = 164.041437
+[01:23:24]   chunk_size0=3456 -> tasks=2
+[01:23:24]     Taskflow...
+[01:24:36]     -> Taskflow pp t/s = 7.253105
+[01:24:36]     Fork-Join...
+[01:24:40]     -> Fork-Join pp t/s = 163.693938
+[01:24:40]   chunk_size0=1152 -> tasks=6
+[01:24:40]     Taskflow...
+[01:25:19]     -> Taskflow pp t/s = 13.501941
+[01:25:19]     Fork-Join...
+[01:25:23]     -> Fork-Join pp t/s = 164.066582
+[01:25:23]   chunk_size0=576 -> tasks=12
+[01:25:23]     Taskflow...
+[01:25:53]     -> Taskflow pp t/s = 17.889452
+[01:25:53]     Fork-Join...
+[01:25:57]     -> Fork-Join pp t/s = 167.744665
+[01:25:57]   chunk_size0=288 -> tasks=24
+[01:25:57]     Taskflow...
+[01:26:20]     -> Taskflow pp t/s = 22.860433
+[01:26:20]     Fork-Join...
+[01:26:24]     -> Fork-Join pp t/s = 168.992924
+[01:26:24]   chunk_size0=144 -> tasks=48
+[01:26:24]     Taskflow...
+[01:26:44]     -> Taskflow pp t/s = 27.366106
+[01:26:44]     Fork-Join...
+[01:26:48]     -> Fork-Join pp t/s = 163.788910
+[01:26:48]   chunk_size0=72 -> tasks=96
+[01:26:48]     Taskflow...
+[01:27:06]     -> Taskflow pp t/s = 30.102755
+[01:27:06]     Fork-Join...
+[01:27:10]     -> Fork-Join pp t/s = 165.077340
+[01:27:10]   chunk_size0=36 -> tasks=192
+[01:27:10]     Taskflow...
+[01:27:28]     -> Taskflow pp t/s = 30.949880
+[01:27:28]     Fork-Join...
+[01:27:32]     -> Fork-Join pp t/s = 168.110916
+[01:27:32]   chunk_size0=18 -> tasks=384
+[01:27:32]     Taskflow...
+[01:27:48]     -> Taskflow pp t/s = 34.161977
+[01:27:48]     Fork-Join...
+[01:27:52]     -> Fork-Join pp t/s = 165.917659
+[01:27:52]   chunk_size0=9 -> tasks=768
+[01:27:52]     Taskflow...
+[01:28:08]     -> Taskflow pp t/s = 34.491741
+[01:28:08]     Fork-Join...
+[01:28:12]     -> Fork-Join pp t/s = 169.061659
+[01:28:12] Panel (b) done. Data saved to /home/haibin/tp/exp_granularity_results/panel_b_multi_core.csv
+[01:28:12] 
+[01:28:12] ==========================================
+[01:28:12] All experiments complete!
+[01:28:12] Results in: /home/haibin/tp/exp_granularity_results
+[01:28:12] ==========================================
