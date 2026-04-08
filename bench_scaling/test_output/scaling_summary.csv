@@ -1,0 +1,3 @@
+model,numa,system,stage,threads,n_runs,speed_tg,speed_pp,avg_graph_us,avg_compute_us,avg_barrier_us,avg_idle_us,barrier_pct,compute_pct,max_compute_us,min_compute_us,imbalance_ratio
+qwen4b,1n,fj,decode,24,1,6.619,63.12,196819.39,177667.41,18725.23,426.74,9.51,90.27,180751.72,173075.44,1.04
+qwen4b,4n,fj,decode,96,1,1.329,24.59,852818.83,670980.43,179990.38,1848.06,21.11,78.68,786192.94,398914.0,1.97
